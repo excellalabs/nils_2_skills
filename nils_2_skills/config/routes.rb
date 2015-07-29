@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'development_plan/create'
+
+  get 'development_plan/destroy'
+
+  get 'development_plan/edit'
+
   get 'Login' => 'user#Login'
 
   get 'Signup' => 'user#Signup'
