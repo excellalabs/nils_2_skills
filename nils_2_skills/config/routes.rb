@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'Login' => 'user#Login'
+
+  get 'Signup' => 'user#Signup'
+
+  get 'Dashboard' => 'user#Dashboard'
+
+  get 'Profile' => 'user#Profile'
+
   get 'Home' => 'static_pages#Home'
 
   get 'About' => 'static_pages#About'
