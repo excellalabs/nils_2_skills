@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'skill/create'
+
+  get 'skill/edit'
+
+  get 'skill/destroy'
+
   get 'Login' => 'user#Login'
 
   get 'Signup' => 'user#Signup'
