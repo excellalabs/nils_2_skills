@@ -5,6 +5,12 @@ Rails.application.routes.draw do
 
   get 'development_plan/edit'
 
+  get 'skill/create'
+
+  get 'skill/edit'
+
+  get 'skill/destroy'
+
   get 'Login' => 'user#Login'
 
   get 'Signup' => 'user#Signup'
