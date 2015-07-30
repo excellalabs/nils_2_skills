@@ -27,3 +27,9 @@ For more information on vagrant: https://docs.vagrantup.com/v2/
 
 RVM is used to manage Ruby versions. For more information: https://rvm.io/
 
+Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. 
+Steps to resolve:
+1. Go to control panel
+2. Click on programs and features
+3. Select "Turn Windows Features on or off"
+4. Expand Hyper-V and uncheck all options.
