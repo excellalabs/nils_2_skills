@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'development_plan/create'
 
   get 'development_plan/destroy'
