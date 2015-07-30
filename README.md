@@ -1,6 +1,10 @@
 # nils_2_skills
 Professional development skill tracking application written in Ruby on Rails
 
+Versions:
+* Ruby 2.1.5
+* Rails 4.1.6
+
 Initial Setup:
   1. Download and install VirtualBox: https://www.virtualbox.org/
   2. Download and install Vagrant: https://www.vagrantup.com/
@@ -19,9 +23,7 @@ Additional useful vagrant commands:
 * If any changes are made to the boostrap.sh file (such as adding additional components to the installation process), execute 'vagrant provision'.
 * Use 'vagrant destroy' to shut down and delete the vagrant vm.
 
-For more information on vagrant see: https://docs.vagrantup.com/v2/
+For more information on vagrant: https://docs.vagrantup.com/v2/
 
-The file .ruby_version sets the default ruby version for the folder that contains it using chruby. This box uses ruby-install and chruby to install and manage ruby 2.2.1. 
-
-For more information about chruby and ruby-install see: https://github.com/postmodern/chruby  and  http://ryanbigg.com/2014/10/ubuntu-ruby-ruby-install-chruby-and-you//
+RVM is used to manage Ruby versions. For more information: https://rvm.io/
 
