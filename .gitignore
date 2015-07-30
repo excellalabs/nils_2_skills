@@ -14,3 +14,6 @@
 
 # Ignore OS X files
 .DS_Store
+
+# Ignore the Gemfile lock
+Gemfile.lock
