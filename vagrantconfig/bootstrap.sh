@@ -121,13 +121,11 @@ then
 	touch /var/log/bashsetup
 fi
 
-# install ruby-dev package, node.js, sqlite3 dev tools
-apt-get -y install ruby1.9.1-dev nodejs libsqlite3-dev
+# install ruby-dev package, node.js
+apt-get -y install ruby1.9.1-dev nodejs
 
-# install rails & sqlite 3 as vagrant user 
+# install rails as vagrant user 
 su - vagrant -c "gem install rails -v 4.1.6 --no-rdoc --no-ri"
-su - vagrant -c "gem install sqlite3 -v '1.3.10' --no-rdoc --no-ri"
 
 # system cleanup
 apt-get -y autoremove
-apt-get clean

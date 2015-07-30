@@ -11,7 +11,11 @@ Initial Setup:
   3. Create a project directory and clone this repository
   4. From terminal enter the command "vagrant up" to create the vagrant box and run the install script
   5. After the vagrant box is created, enter 'vagrant ssh' to access the vagrant box from the terminal
-  6. Enter 'cd /vagrant' to navigate to the vagrant folder (shared directory with your host machine that contains all the project/source files)
+  6. Enter 'cd /vagrant/nils_2_skills'
+  7. Run 'bundle install'
+  8. Run 'bundle exec rake db:migrate'
+
+To start WEBrick and run the Rails app, use the alias 'runserver' from the command line.
 
 Once the vagrant machine has been configured and WEBrick has been started, to view the application in your browser, use localhost:8888 followed by the page route once rails is running. For example: http://localhost:8888/home. The port number can be changed in the Vagrantfile.
 
@@ -27,9 +31,8 @@ For more information on vagrant: https://docs.vagrantup.com/v2/
 
 RVM is used to manage Ruby versions. For more information: https://rvm.io/
 
-Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. 
-Steps to resolve:
-1. Go to control panel
-2. Click on programs and features
-3. Select "Turn Windows Features on or off"
-4. Expand Hyper-V and uncheck all options.
+Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. Steps to resolve:
+  1. Go to control panel
+  2. Click on programs and features
+  3. Select "Turn Windows Features on or off"
+  4. Expand Hyper-V and uncheck all options.
