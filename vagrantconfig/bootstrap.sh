@@ -4,29 +4,14 @@ apt-get update
 # install build essentials for compilation
 apt-get -y install build-essential
 
-# ruby-install & chruby
+# install rvm & ruby
 if [ ! -f /var/log/rubysetup ];
 then
     cd /home/vagrant
-    # ruby-install pkg mgr (https://github.com/postmodern/ruby-install)
-	wget -O ruby-install-0.5.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.5.0.tar.gz
-	tar -xzf ruby-install-0.5.0.tar.gz
-	su - vagrant -c "cd ruby-install-0.5.0; sudo make install"
-
-	# install ruby 1.9.3 as vagrant user
-	su - vagrant -c "ruby-install ruby 2.1.5 -- --disable-install-rdoc"
-	#ruby-install --install-dir /home/vagrant ruby 1.9.3 -- --disable-install-rdoc
-
-	# chruby version mgr (https://github.com/postmodern/chruby) 
-	wget -O chruby-0.3.9.tar.gz https://github.com/postmodern/chruby/archive/v0.3.9.tar.gz
-	tar -xzf chruby-0.3.9.tar.gz
-	su - vagrant -c "cd chruby-0.3.9; sudo make install"
-
-	touch /var/log/rubysetup
-
-	# remove tar files to free space
-	rm -f /home/vagrant/ruby-install-0.5.0.tar.gz
-	rm -f /home/vagrant/chruby-0.3.9.tar.gz
+    # install rvm
+    su - vagrant -c "gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3"
+    su - vagrant -c "\curl -sSL https://get.rvm.io | bash -s stable --ruby=2.1.5"
+    su - vagrant -c "rvm --default use 2.1.5"
 fi
 
 # update bash file to include project specific settings
@@ -42,8 +27,8 @@ fi
 apt-get -y install ruby1.9.1-dev nodejs libsqlite3-dev
 
 # install rails & sqlite 3 as vagrant user 
-su - vagrant -c "source /usr/local/share/chruby/chruby.sh; chruby ruby-2.1.5; gem install rails -v 4.1.6 --no-rdoc --no-ri"
-su - vagrant -C "source /usr/local/share/chruby/chruby.sh; chruby ruby-2.1.5; gem install sqlite3 -v '1.3.10' --no-rdoc --no-ri"
+su - vagrant -c "gem install rails -v 4.1.6 --no-rdoc --no-ri"
+su - vagrant -c "gem install sqlite3 -v '1.3.10' --no-rdoc --no-ri"
 
 # system cleanup
 apt-get -y autoremove
