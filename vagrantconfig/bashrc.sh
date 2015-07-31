@@ -1,3 +1,4 @@
+# source rvm
 source /home/vagrant/.rvm/scripts/rvm
 
 # aliases
