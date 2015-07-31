@@ -18,9 +18,7 @@ APP_DB_USER=developer
 APP_DB_PASS=developer
 
 # Edit the following to change the name of the database that is created (defaults to the user name)
-APP_DB_NAME=nils_2_skills
-APP_DB_NAME_DEV=nils_2_skills_dev
-APP_DB_NAME_TEST=nils_2_skills_test
+APP_DB_NAME=nils_2_skills_development
 
 # Edit the following to change the version of PostgreSQL that is installed
 PG_VERSION=9.3
@@ -74,10 +72,6 @@ then
   wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | apt-key add -
 fi
 
-# Update package list and upgrade all packages
-apt-get update
-apt-get -y upgrade
-
 # Install postgresql & postgresql library
 apt-get -y install "postgresql-$PG_VERSION" "postgresql-contrib-$PG_VERSION"
 apt-get -y install libpq-dev
@@ -98,11 +92,10 @@ service postgresql restart
 cat << EOF | su - postgres -c psql
 -- Create the database user:
 CREATE USER $APP_DB_USER WITH PASSWORD '$APP_DB_PASS';
+ALTER USER $APP_DB_USER WITH SUPERUSER;
 
 -- Create the databases:
 CREATE DATABASE $APP_DB_NAME WITH OWNER $APP_DB_USER;
-CREATE DATABASE $APP_DB_NAME_DEV WITH OWNER $APP_DB_USER;
-CREATE DATABASE $APP_DB_NAME_TEST WITH OWNER $APP_DB_USER;
 EOF
 
 # Tag the provision time:
@@ -129,3 +122,16 @@ su - vagrant -c "gem install rails -v 4.1.6 --no-rdoc --no-ri"
 
 # system cleanup
 apt-get -y autoremove
+
+
+# PGUSER=developer PGPASSWORD=developer psql -h localhost -p 5432 nils_2_skills
+
+# login as root / system user
+# 1: sudo -u postgres psql
+# 2: create user vagrant createdb createuser password 'vagrant'; # for rake db commands
+# 3: bundle install
+# 4: bundle exec rake db:create:all
+# 5: bundle exec rake db:migrate
+
+
+

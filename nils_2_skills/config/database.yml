@@ -9,7 +9,7 @@ default: &default
 
 development:
   <<: *default
-  database: nils_2_skills_dev
+  database: nils_2_skills_development
 
 test:
   <<: *default
@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: nils_2_skills
+  database: nils_2_skills_production
