@@ -12,10 +12,6 @@ Rails.application.routes.draw do
 
   get 'skill/destroy'
 
-  get 'Login' => 'user#Login'
-
-  get 'Signup' => 'user#Signup'
-
   get 'Dashboard' => 'user#Dashboard'
 
   get 'Profile' => 'user#Profile'
