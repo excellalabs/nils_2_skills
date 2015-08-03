@@ -17,3 +17,6 @@
 
 # Ignore the Gemfile lock
 Gemfile.lock
+
+#Ignore RubyMine files`
+*.idea
