@@ -1,0 +1,13 @@
+<h1>Create a skill!</h1>
+<%= form_for :skill, url: skill_create_path do |s| %>
+	<%= s.label :skill_name %>
+	<%= s.text_field :skill_name, class: 'form-control'%>
+
+	<%= s.label :category %>
+	<%= s.text_field :category, class: 'form-control'%>
+
+	<%= s.label :description %>
+	<%= s.text_area :description, class: 'form-control'%>
+
+	<%= s.submit "Create new skill" %>
+<% end %>

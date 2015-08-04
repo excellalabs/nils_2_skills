@@ -3,6 +3,20 @@ Rails.application.routes.draw do
 
   get 'skill/create'
 
+  post 'development_plan/create'
+
+  get 'development_plan/destroy'
+
+  get 'development_plan/new'
+
+  get 'development_plan/edit'
+
+  post 'development_plan/update'
+
+  get 'skill/new'
+
+  post 'skill/create'
+
   get 'skill/edit'
 
   get 'skill/destroy'
