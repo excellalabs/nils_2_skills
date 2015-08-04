@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   # Create won't work without below. Need to fix Create page to work with resources
   post 'development_plan/create'
 
+  get 'development_plan/show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

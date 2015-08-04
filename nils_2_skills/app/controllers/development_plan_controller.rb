@@ -22,7 +22,7 @@ class DevelopmentPlanController < ApplicationController
     if correct_user(@development_plan.user_id)
       if @development_plan.update(devplan_params)
         # @development_plan.update_attributes(devplan_params)
-        redirect_to '/Dashboard'
+        redirect_to development_plan_path
       else
         redirect_to edit_development_plan_path
         # Flash error messages
@@ -36,6 +36,10 @@ class DevelopmentPlanController < ApplicationController
     @development_plan = DevelopmentPlan.find(params[:id])
     @development_plan.destroy
     redirect_to '/Dashboard'
+  end
+
+  def show
+    @development_plan = DevelopmentPlan.find(params[:id])
   end
 
   def devplan_params

@@ -5,10 +5,10 @@
   	
     <%= form_for :development_plan, url: development_plan_create_path do |f| %>
 
-      <%= f.label :plan_name %>
+      <%= f.label :plan_name %>:
       <%= f.text_field :plan_name, class: 'form-control' %><br/>
 
-      <%= f.label :description %>
+      <%= f.label :description %>:
       <%= f.text_area :description, class: 'form-control' %>
 
       <%= f.submit "Create new development plan" %>
