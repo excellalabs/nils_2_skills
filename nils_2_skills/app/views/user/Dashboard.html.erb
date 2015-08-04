@@ -3,10 +3,12 @@
 
 <% if current_user.development_plans.any? %>
 	<% current_user.development_plans.each do |plan| %>
-		Plan ID: <%= plan.id %> <br/>
-		Plan Name: <%= plan.plan_name %> <br/>
-		Plan Description: <%= plan.description %> <br/><br/><br/>
+		Plan Name: <%= link_to("#{plan.plan_name}", edit_development_plan_path(plan.id)) %> <br/>
+		Plan Description: <%= plan.description %> <br/>
+		<%= link_to "delete?", plan, method: :delete, data: { confirm: "You sure?"} %><br/><br/>
 	<% end %>
+	<br/><%= link_to("Create a new development plan", development_plan_new_path) %>
 <% else %>
 	<%= current_user.username %> does not currently have any development plans!
+	<%= link_to("Create a new development plan", development_plan_new_path) %>
 <% end %>

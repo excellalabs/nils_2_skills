@@ -1,2 +1,5 @@
 <h1>StaticPages#Home</h1>
 <p>Find me in app/views/static_pages/Home.html.erb</p>
+<% if user_signed_in? %>
+	<%= link_to("My Development Plans", 'Dashboard') %>
+<% end %>

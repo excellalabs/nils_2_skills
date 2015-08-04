@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'development_plan/create'
+
+  post 'development_plan/create'
 
   get 'development_plan/destroy'
 
+  get 'development_plan/new'
+
   get 'development_plan/edit'
+
+  post 'development_plan/update'
 
   get 'skill/create'
 
   get 'skill/edit'
 
   get 'skill/destroy'
-
-  get 'Dashboard' => 'user#Dashboard'
 
   get 'Profile' => 'user#Profile'
 
@@ -21,6 +24,10 @@ Rails.application.routes.draw do
   get 'About' => 'static_pages#About'
 
   get 'Help' => 'static_pages#Help'
+
+  get 'Dashboard' => 'user#Dashboard'
+
+  resources :development_plan
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
