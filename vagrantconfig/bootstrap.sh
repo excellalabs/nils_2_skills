@@ -117,21 +117,12 @@ fi
 # install ruby-dev package, node.js
 apt-get -y install ruby1.9.1-dev nodejs
 
-# install rails as vagrant user 
+# install rails & rubocop as vagrant user 
 su - vagrant -c "gem install rails -v 4.1.6 --no-rdoc --no-ri"
+su - vagrant -c "gem install rubocop"
 
 # system cleanup
 apt-get -y autoremove
-
-
-# PGUSER=developer PGPASSWORD=developer psql -h localhost -p 5432 nils_2_skills
-
-# login as root / system user
-# 1: sudo -u postgres psql
-# 2: create user vagrant createdb createuser password 'vagrant'; # for rake db commands
-# 3: bundle install
-# 4: bundle exec rake db:create:all
-# 5: bundle exec rake db:migrate
 
 
 

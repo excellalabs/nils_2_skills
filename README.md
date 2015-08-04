@@ -4,6 +4,7 @@ Professional development skill tracking application written in Ruby on Rails
 Versions:
 * Ruby 2.1.5
 * Rails 4.1.6
+* PostgreSQL 9.3
 
 Initial Setup:
   1. Download and install VirtualBox: https://www.virtualbox.org/
@@ -30,6 +31,8 @@ Additional useful vagrant commands:
 For more information on vagrant: https://docs.vagrantup.com/v2/
 
 RVM is used to manage Ruby versions. For more information: https://rvm.io/
+
+Rubocop is installed for code analysis. For more information: https://github.com/bbatsov/rubocop
 
 Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. Steps to resolve:
   1. Go to control panel
