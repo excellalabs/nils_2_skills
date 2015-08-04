@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  post 'development_plan/create'
-
-  get 'development_plan/destroy'
-
-  get 'development_plan/new'
-
-  get 'development_plan/edit'
-
-  post 'development_plan/update'
-
   get 'skill/create'
 
   get 'skill/edit'
@@ -28,6 +18,8 @@ Rails.application.routes.draw do
   get 'Dashboard' => 'user#Dashboard'
 
   resources :development_plan
+  # Create won't work without below. Need to fix Create page to work with resources
+  post 'development_plan/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,10 +5,10 @@
 	<% current_user.development_plans.each do |plan| %>
 		Plan Name: <%= link_to("#{plan.plan_name}", edit_development_plan_path(plan.id)) %> <br/>
 		Plan Description: <%= plan.description %> <br/>
-		<%= link_to "delete?", plan, method: :delete, data: { confirm: "You sure?"} %><br/><br/>
+		<%= link_to "delete?", plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{plan.plan_name}?"} %><br/><br/>
 	<% end %>
-	<br/><%= link_to("Create a new development plan", development_plan_new_path) %>
+	<br/><%= link_to("Create a new development plan", new_development_plan_path) %>
 <% else %>
 	<%= current_user.username %> does not currently have any development plans!
-	<%= link_to("Create a new development plan", development_plan_new_path) %>
+	<%= link_to("Create a new development plan", new_development_plan_path) %>
 <% end %>

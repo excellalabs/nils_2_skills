@@ -1,24 +1,17 @@
 class DevelopmentPlanController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user
 
   def new
   	@development_plan = DevelopmentPlan.new
   end
   def create
-    current_user.development_plans << DevelopmentPlan.new(devplan_params)
-  	if current_user.save
+  current_user.development_plans << DevelopmentPlan.new(devplan_params)
+    if current_user.save
   	  redirect_to '/Dashboard'
   	else
-      redirect_to development_plan_new_path
-  	  #redirect_to '/development_plan/new'
+      redirect_to new_development_plan_path
       # Flash error message - Hartl?
   	end
-  end
-
-  def destroy
-    @development_plan.destroy
-    redirect_to '/Dashboard'
   end
 
   def edit
@@ -26,20 +19,31 @@ class DevelopmentPlanController < ApplicationController
   end
   def update
     @development_plan = DevelopmentPlan.find(params[:id])
-    if  @development_plan.update_attributes(devplan_params)
-      redirect_to '/Dashboard'
+    if correct_user(@development_plan.user_id)
+      if @development_plan.update(devplan_params)
+        # @development_plan.update_attributes(devplan_params)
+        redirect_to '/Dashboard'
+      else
+        redirect_to edit_development_plan_path
+        # Flash error messages
+      end
     else
-      redirect_to edit_development_plan_path
-      # Flash error messages
+      redirect_to root_url
     end
+  end
 
+  def destroy
+    @development_plan = DevelopmentPlan.find(params[:id])
+    @development_plan.destroy
+    redirect_to '/Dashboard'
   end
 
   def devplan_params
   	params.require(:development_plan).permit(:plan_name, :description)
   end
 
-  def correct_user
-      @development_plan = current_user.development_plans.find_by(id: params[:id])
+  def correct_user(user_id)
+      #Checks if the plan was created by the current user before updating changes
+      user_id == current_user.id
   end
 end
