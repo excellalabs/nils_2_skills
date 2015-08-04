@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   post 'development_plan/update'
 
-  get 'skill/create'
+  get 'skill/new'
+
+  post 'skill/create'
 
   get 'skill/edit'
 
