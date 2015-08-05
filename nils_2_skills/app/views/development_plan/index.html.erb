@@ -1,0 +1,15 @@
+<h1>Listing ALL development plans for ALL users</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @development_plans.each do |plan| %>
+    <tr>
+      <td><%= link_to("#{plan.plan_name}", development_plan_path(plan.id)) %></td>
+      <td><%= plan.description %></td>
+    </tr>
+  <% end %>
+</table>

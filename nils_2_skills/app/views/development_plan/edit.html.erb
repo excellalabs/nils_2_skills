@@ -8,10 +8,13 @@
       <%= f.label :plan_name %>:
       <%= f.text_field :plan_name, class: 'form-control' %><br/>
 
-      <%= f.label :description %>;
+      <%= f.label :description %>:
       <%= f.text_area :description, class: 'form-control' %>
 
       <%= f.submit "Save changes" %>
     <% end %>
   </div>
 </div>
+
+<br/><br/>
+<%= link_to("Back to Dashboard", :Dashboard) %>
