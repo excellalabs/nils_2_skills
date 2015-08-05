@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150804154159) do
   end
 
   create_table "development_tasks", force: true do |t|
-    t.string   "test_name"
+    t.string   "task_name"
     t.text     "details"
     t.date     "start_date"
     t.date     "completion_date"

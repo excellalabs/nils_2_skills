@@ -1,0 +1,13 @@
+<h1>Show</h1>
+
+ID: <%= @development_task.id %><br/>
+Task Name: <%=  @development_task.task_name %><br/>
+Details: <%= @development_task.details %><br/>
+Start Date: <%= @development_task.start_date %><br/>
+Completion Date: <%= @development_task.completion_date %><br/>
+Completed?: <%= @development_task.completed %><br/>
+<%= link_to("edit", edit_development_task_path(@development_task.id)) %> <br/>
+<%= link_to "delete?", @development_task, method: :delete, data: { confirm: "Are you sure you want to delete the task #{@development_task.task_name}?"} %><br/><br/>
+
+<br/><br/>
+<%= link_to("Back to Dashboard", :Dashboard) %>
