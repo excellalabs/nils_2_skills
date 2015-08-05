@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :development_skills
+
   devise_for :users
 
   get 'skill/create'
