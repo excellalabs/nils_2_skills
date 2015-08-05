@@ -27,7 +27,17 @@ Rails.application.routes.draw do
 
   get 'Dashboard' => 'user#Dashboard'
 
-  resources :development_plan
+  get 'admin' => 'admin#index'
+ 
+  get 'admin/skill_category' => 'admin#skill_category'
+
+  get 'admin/edit_skill_category' => 'admin#edit_skill_category'
+
+  post 'admin/create_skill_category' => 'admin#create_skill_category'
+
+  post 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
+
+  resources :development_plan  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

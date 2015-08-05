@@ -1,0 +1,23 @@
+<br/>
+<h2>Skill Categories</h2>
+<br/>
+<%= render partial: "admin/skill_category_form" %>
+<br/>
+<div>
+	<table>
+  		<tr>
+    		<th>Category</th>
+    		<th>Description</th>
+    		<th colspan="2"></th>
+  		</tr>  		
+  		<% @categories[:skill_categories].each do |category| -%>
+        	<tr>
+        		<td><%= category.category_name %></td>
+        		<td><%= category.description %></td>
+        		<td><%= link_to 'Edit', admin_edit_skill_category_path(category.id) %></td>
+      			<td><%= link_to 'Destroy', admin_destroy_skill_category_path(category.id),
+              			method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        	</tr>
+		<% end -%>
+	</table>
+</div>
