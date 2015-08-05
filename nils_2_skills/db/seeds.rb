@@ -28,7 +28,7 @@ user_list.each do |name, email|
 		created_at: today, updated_at: today, confirmed_at: today)
 
 	rand(10).times do |i|
-		user.development_plans.create!(plan_name: 'Plan #{i+1} for #{user.username}..', 
-								  	   description: 'This is a development plan.')
+		user.development_plans.create!(plan_name: "Plan #{i+1} for #{user.username}", 
+								  	   description: "This is a development plan.")
 	end
 end
