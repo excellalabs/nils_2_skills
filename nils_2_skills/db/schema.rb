@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150730210328) do
     t.integer  "user_id"
   end
 
+  create_table "development_skills", force: true do |t|
+    t.string   "skill_name"
+    t.string   "desired_skill_level"
+    t.text     "notes"
+    t.boolean  "completed"
+    t.float    "percent_complete"
+    t.string   "current_skill_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "development_tasks", force: true do |t|
     t.string   "test_name"
     t.text     "details"
