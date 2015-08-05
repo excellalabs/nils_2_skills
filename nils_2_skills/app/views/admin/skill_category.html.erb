@@ -14,8 +14,8 @@
         	<tr>
         		<td><%= category.category_name %></td>
         		<td><%= category.description %></td>
-        		<td><%= link_to 'Edit', admin_edit_skill_category_path(category.id) %></td>
-      			<td><%= link_to 'Destroy', admin_destroy_skill_category_path(category.id),
+        		<td><%= link_to 'Edit', admin_edit_skill_category_path(id: category.id) %></td>
+      			<td><%= link_to 'Destroy', admin_destroy_skill_category_path(id: category.id),
               			method: :delete, data: { confirm: 'Are you sure?' } %></td>
         	</tr>
 		<% end -%>

@@ -23,6 +23,7 @@ class AdminController < ApplicationController
   end
 
   def destroy_skill_category
+    puts "params id: " + params[:id].to_s
     @skill_category = SkillCategory.find(params[:id])
     @skill_category.destroy
     redirect_to admin_skill_category_path 
