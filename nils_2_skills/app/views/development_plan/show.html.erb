@@ -1,0 +1,10 @@
+<h1>Show</h1>
+
+ID: <%= @development_plan.id %><br/>
+Plan Name: <%=  @development_plan.plan_name %><br/>
+Description: <%= @development_plan.description %><br/>
+<%= link_to("edit", edit_development_plan_path(@development_plan.id)) %> <br/>
+<%= link_to "delete?", @development_plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{@development_plan.plan_name}?"} %><br/><br/>
+
+<br/><br/>
+<%= link_to("Back to Dashboard", :Dashboard) %>

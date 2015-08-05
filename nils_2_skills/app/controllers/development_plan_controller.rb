@@ -1,45 +1,69 @@
 class DevelopmentPlanController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user
+  before_action :set_dev_plan, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @development_plans = DevelopmentPlan.all
+  end
+
+  def show
+  end
 
   def new
   	@development_plan = DevelopmentPlan.new
   end
+
+  def edit
+  end
+
   def create
-    current_user.development_plans << DevelopmentPlan.new(devplan_params)
-  	if current_user.save
-  	  redirect_to '/Dashboard'
+  current_user.development_plans << DevelopmentPlan.new(devplan_params)
+    if current_user.save
+  	  redirect_to :Dashboard
   	else
-      redirect_to development_plan_new_path
-  	  #redirect_to '/development_plan/new'
+      #Render sends object back to form as opposed to redirect, which issues a new request
+      redirect_to new_development_plan_path
       # Flash error message - Hartl?
   	end
   end
 
-  def destroy
-    @development_plan.destroy
-    redirect_to '/Dashboard'
+  def update
+    if correct_user(@development_plan.user_id)
+      if @development_plan.update(devplan_params)
+        # @development_plan.update_attributes(devplan_params)
+        redirect_to development_plan_path
+      else
+        redirect_to edit_development_plan_path
+        # Flash error messages
+      end
+    else
+      #User cannot edit plans they did not create
+      redirect_to root_url
+    end
   end
 
-  def edit
-    @development_plan = DevelopmentPlan.find(params[:id])
-  end
-  def update
-    @development_plan = DevelopmentPlan.find(params[:id])
-    if  @development_plan.update_attributes(devplan_params)
-      redirect_to '/Dashboard'
+  def destroy
+    if correct_user(@development_plan.user_id)
+      @development_plan.destroy
+      redirect_to :Dashboard
+      #Handle failed deletes?
     else
-      redirect_to edit_development_plan_path
-      # Flash error messages
+      #User cannot delete plans they did not create
+      redirect_to root_url
+    end
+  end
+
+  private
+    def devplan_params
+    	params.require(:development_plan).permit(:plan_name, :description)
     end
 
-  end
+    def correct_user(user_id)
+        #Checks if the plan was created by the current user before updating changes
+        user_id == current_user.id
+    end
 
-  def devplan_params
-  	params.require(:development_plan).permit(:plan_name, :description)
-  end
-
-  def correct_user
-      @development_plan = current_user.development_plans.find_by(id: params[:id])
-  end
+    def set_dev_plan
+      @development_plan = DevelopmentPlan.find(params[:id])
+    end
 end
