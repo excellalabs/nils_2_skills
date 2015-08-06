@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   get 'development_plan/show'
 
   resources :development_tasks
+  resources :skill_categories
+  resources :skill_levels
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
