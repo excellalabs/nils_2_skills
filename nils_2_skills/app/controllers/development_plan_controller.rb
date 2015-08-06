@@ -1,5 +1,5 @@
 class DevelopmentPlanController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_dev_plan, only: [:show, :edit, :update, :destroy]
 
   def index

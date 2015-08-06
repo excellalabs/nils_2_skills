@@ -6,10 +6,10 @@ class UserControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get Signup" do
-    get :Signup
-    assert_response :success
-  end
+  # test "should get Signup" do
+  #   get :Signup
+  #   assert_response :success
+  # end
 
   test "should get Dashboard" do
     get :Dashboard

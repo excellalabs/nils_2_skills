@@ -23,7 +23,19 @@ Rails.application.routes.draw do
 
   get 'Dashboard' => 'user#Dashboard'
 
-  resources :development_plan  
+  get 'admin' => 'admin#index'
+ 
+  get 'admin/skill_category' => 'admin#skill_category'
+
+  get 'admin/edit_skill_category' => 'admin#edit_skill_category'
+
+  post 'admin/create_skill_category' => 'admin#create_skill_category'
+
+  patch 'admin/update_skill_category' => 'admin#update_skill_category'
+
+  delete 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
+
+  resources :development_plan
 
   # Create won't work without below. Need to fix Create page to work with resources
   post 'development_plan/create'
