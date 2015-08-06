@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class DevelopmentPlanControllerTest < ActionController::TestCase
+
   test "should get create" do
     get :create
     assert_response :success
+    assert_not_nil assigns(:development_plan)
   end
 
   test "should get destroy" do

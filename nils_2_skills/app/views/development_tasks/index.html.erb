@@ -1,0 +1,23 @@
+<h1>Listing ALL development tasks for ALL users</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Details</th>
+    <th>Start Date</th>
+    <th>Completion Date</th>
+    <th>Completed?</th>
+  </tr>
+ 
+  <% @development_tasks.each do |task| %>
+    <tr>
+      <td><%= link_to("#{task.task_name}", development_task_path(task.id)) %></td>
+      <td><%= task.details %></td>
+      <td><%= task.start_date %></td>
+      <td><%= task.completion_date %></td>
+      <td><%= task.completed %></td>
+    </tr>
+  <% end %>
+</table>
+<br/><br/>
+<%= link_to "Create new development task", new_development_task_path %>
