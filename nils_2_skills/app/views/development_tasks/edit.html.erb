@@ -9,15 +9,15 @@
       <%= f.text_field :task_name, class: 'form-control' %><br/>
 
       <%= f.label :details %>:
-      <%= f.text_area :details, class: 'form-control' %><br/><br/>
+      <%= f.text_area :details, class: 'form-control' %><br/>
 
       <%= f.label :start_date %>:
-      <%= f.text_area :start_date, class: 'form-control' %><br/><br/>
+      <%= f.date_select :start_date, class: 'form-control' %><br/>
 
       <%= f.label :completion_date %>:
-      <%= f.text_area :completion_date, class: 'form-control' %><br/><br/>
+      <%= f.date_select :completion_date, class: 'form-control' %><br/>
 
-      <%= f.label :completed %>
+      <%= f.label :completed %>:
       <%= f.check_box :completed %><br/>
     
       <%= f.submit "Save changes" %>

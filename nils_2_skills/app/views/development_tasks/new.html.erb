@@ -9,10 +9,16 @@
       <%= f.text_field :task_name, class: 'form-control' %><br/>
 
       <%= f.label :details %>:
-      <%= f.text_area :details, class: 'form-control' %><br/><br/>
+      <%= f.text_area :details, class: 'form-control' %><br/>
 
-      <%= f.label :completed %><br>
-      <%= f.check_box :completed %>
+      <%= f.label :start_date %>:
+      <%= f.date_select :start_date %><br/>
+
+      <%= f.label :completion_date %>:
+      <%= f.date_select :completion_date %><br/>
+
+      <%= f.label :completed %>:
+      <%= f.check_box :completed %><br/><br/>
     
       <%= f.submit "Create new development task" %>
     <% end %>
