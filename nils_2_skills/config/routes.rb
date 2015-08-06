@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   delete 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
 
-  resources :development_plan  
+  resources :development_plan
 
   # Create won't work without below. Need to fix Create page to work with resources
   post 'development_plan/create'
