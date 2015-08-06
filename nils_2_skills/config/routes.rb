@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'skill/create'
-
   post 'development_plan/create'
 
   get 'development_plan/destroy'
@@ -12,14 +10,6 @@ Rails.application.routes.draw do
   get 'development_plan/edit'
 
   post 'development_plan/update'
-
-  get 'skill/new'
-
-  post 'skill/create'
-
-  get 'skill/edit'
-
-  get 'skill/destroy'
 
   get 'Profile' => 'user#Profile'
 
@@ -32,6 +22,7 @@ Rails.application.routes.draw do
   get 'Dashboard' => 'user#Dashboard'
 
   resources :development_plan
+  resources :skills
   # Create won't work without below. Need to fix Create page to work with resources
   post 'development_plan/create'
 

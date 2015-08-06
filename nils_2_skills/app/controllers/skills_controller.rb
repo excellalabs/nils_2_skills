@@ -1,4 +1,4 @@
-class SkillController < ApplicationController
+class SkillsController < ApplicationController
   def new
   	@skill = Skill.new
   end
@@ -18,6 +18,11 @@ class SkillController < ApplicationController
   end
 
   def edit
+  	
+  end
+
+  def update
+
   end
 
   def skill_params
