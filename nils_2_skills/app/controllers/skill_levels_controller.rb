@@ -7,11 +7,6 @@ class SkillLevelsController < ApplicationController
     @skill_levels = SkillLevel.all
   end
 
-  # GET /skill_levels/1
-  # GET /skill_levels/1.json
-  def show
-  end
-
   # GET /skill_levels/new
   def new
     @skill_level = SkillLevel.new
@@ -19,6 +14,9 @@ class SkillLevelsController < ApplicationController
 
   # GET /skill_levels/1/edit
   def edit
+  end
+
+  def show
   end
 
   # POST /skill_levels
@@ -69,6 +67,6 @@ class SkillLevelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_level_params
-      params[:skill_level]
+      params.require(:skill_level).permit(:level, :description)
     end
 end

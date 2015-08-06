@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+  <div>
+    <%= f.label :level %>
+    <%= f.text_field :level, class: 'form-control' %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
