@@ -10,7 +10,8 @@
   <tbody>
     <% @skill_categories.each do |skill_category| %>
       <tr>
-        <td><%= link_to 'Show', skill_category %></td>
+        <td><%= skill_category.category_name %></td>
+        <td><%= skill_category.description %></td>
         <td><%= link_to 'Edit', edit_skill_category_path(skill_category) %></td>
         <td><%= link_to 'Destroy', skill_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

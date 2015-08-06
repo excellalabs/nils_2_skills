@@ -7,11 +7,6 @@ class SkillCategoriesController < ApplicationController
     @skill_categories = SkillCategory.all
   end
 
-  # GET /skill_categories/1
-  # GET /skill_categories/1.json
-  def show
-  end
-
   # GET /skill_categories/new
   def new
     @skill_category = SkillCategory.new
@@ -69,6 +64,7 @@ class SkillCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_category_params
-      params[:skill_category]
+      #params[:skill_category]
+      params.require(:skill_category).permit(:category_name, :description)
     end
 end
