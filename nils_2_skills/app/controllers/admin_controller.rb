@@ -13,12 +13,14 @@ class AdminController < ApplicationController
 
   def edit_skill_category
   	@categories = { :skill_category => SkillCategory.find(params[:id]), :skill_categories => SkillCategory.all, :submit_btn_text => "Update Category", :path => admin_update_skill_category_path }
-    redirect_to admin_skill_category_path
+    render "admin/skill_category"
   end
 
   def update_skill_category
-    @skill_category = SkillCategory.find(params[:id])
-    @skill_category.update
+    @skill_category = SkillCategory.find(params["skill_category"]["id"])
+    @skill_category.category_name = params["skill_category"]['category_name']
+    @skill_category.description = params["skill_category"]['description']
+    @skill_category.save!
     redirect_to admin_skill_category_path  
   end
 

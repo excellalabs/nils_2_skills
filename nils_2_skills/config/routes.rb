@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   post 'admin/create_skill_category' => 'admin#create_skill_category'
 
-  post 'admin/update_skill_category' => 'admin#update_skill_category'
+  patch 'admin/update_skill_category' => 'admin#update_skill_category'
 
   delete 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
 
