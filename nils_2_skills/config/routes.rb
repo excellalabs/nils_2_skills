@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'Help' => 'static_pages#Help'
 
+  get 'Settings' => 'static_pages#Settings'
+
   get 'Dashboard' => 'user#Dashboard'
 
   get 'admin' => 'admin#index'
