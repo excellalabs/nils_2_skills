@@ -3,6 +3,10 @@ class SkillsController < ApplicationController
   	@skill = Skill.new
   end
 
+  def index
+    @skill = Skill.new
+  end
+
   def create
   	@skill = Skill.new(params.require(:skill).permit(:skill_name, :category, :description))
 	  	if @skill.save
