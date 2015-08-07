@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
   end
 
   def create
-  	@skill = Skill.new(skill_params)
+  	@skill = Skill.new(params.require(:skill).permit(:skill_name, :category, :description))
 	  	if @skill.save
 	  	  redirect_to :Dashboard
 	  	else
