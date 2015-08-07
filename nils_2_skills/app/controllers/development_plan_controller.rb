@@ -33,7 +33,7 @@ class DevelopmentPlanController < ApplicationController
         # @development_plan.update_attributes(devplan_params)
         redirect_to development_plan_path
       else
-        redirect_to edit_development_plan_path
+        render 'edit'
         # Flash error messages
       end
     else

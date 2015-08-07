@@ -1,28 +1,7 @@
 <h1>New Development Task</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-  	
-    <%= form_for (@development_task) do |f| %>
+<%= render 'form' %>
 
-      <%= f.label :task_name %>:
-      <%= f.text_field :task_name, class: 'form-control' %><br/>
 
-      <%= f.label :details %>:
-      <%= f.text_area :details, class: 'form-control' %><br/>
-
-      <%= f.label :start_date %>:
-      <%= f.date_select :start_date %><br/>
-
-      <%= f.label :completion_date %>:
-      <%= f.date_select :completion_date %><br/>
-
-      <%= f.label :completed %>:
-      <%= f.check_box :completed %><br/><br/>
-    
-      <%= f.submit "Create new development task" %>
-    <% end %>
-  </div>
-</div>
-<br/><br/>
+<%= link_to("Back to tasks", development_tasks_path) %>
 <%= link_to("Back to Dashboard", :Dashboard) %>

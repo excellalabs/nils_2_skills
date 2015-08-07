@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20150807180845) do
     t.string   "current_skill_level"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "skill_id"
   end
 
   create_table "development_tasks", force: true do |t|
@@ -76,8 +75,6 @@ ActiveRecord::Schema.define(version: 20150807180845) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "development_skill_id"
-    t.integer  "skill_category_id"
   end
 
   create_table "users", force: true do |t|

@@ -2,20 +2,23 @@ require 'test_helper'
 
 class DevelopmentPlanControllerTest < ActionController::TestCase
 
-  test "should get create" do
-    get :create
+  test "should get new" do
+    get :new
     assert_response :success
     assert_not_nil assigns(:development_plan)
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
-  end
+  # test "should get index" do
+  #   get :index
+  #   assert_response :success
+  #   assert_not_nil assigns(:development_plan)
+  # end
 
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
+  # test "should get show" do
+  #   get development_plan_path(1)
+  #   #get :show
+  #   assert_response :success
+  #   assert_not_nil assigns(:development_plan)
+  # end
 
 end
