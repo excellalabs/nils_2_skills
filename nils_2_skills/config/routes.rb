@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   resources :development_plans
   resources :development_skills
+  resources :development_plan
   resources :skills
   resources :development_tasks
   resources :skill_categories
