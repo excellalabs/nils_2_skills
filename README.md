@@ -34,6 +34,8 @@ RVM is used to manage Ruby versions. For more information: https://rvm.io/
 
 Rubocop is installed for code analysis. For more information: https://github.com/bbatsov/rubocop
 
+Rspec-rails is installed for testing: https://github.com/rspec/rspec-rails
+
 Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. Steps to resolve:
   1. Go to control panel
   2. Click on programs and features

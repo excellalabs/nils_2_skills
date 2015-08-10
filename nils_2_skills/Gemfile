@@ -30,3 +30,5 @@ gem 'byebug'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
+# Rubocop for code analysis: https://github.com/bbatsov/rubocop
+gem 'rubocop', require: false
