@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :development_skills
 
   devise_for :users
 
@@ -27,15 +26,9 @@ Rails.application.routes.draw do
 
   delete 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
 
-  resources :development_plan
-
+  resources :development_plans
+  resources :development_skills
   resources :skills
-
-  # Create won't work without below. Need to fix Create page to work with resources
-  post 'development_plan/create'
-
-  get 'development_plan/show'
-
   resources :development_tasks
   resources :skill_categories
   resources :skill_levels
