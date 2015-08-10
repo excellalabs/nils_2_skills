@@ -1,5 +1,5 @@
-class DevelopmentPlanController < ApplicationController
-  # before_action :authenticate_user!
+class DevelopmentPlansController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_dev_plan, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,8 +17,9 @@ class DevelopmentPlanController < ApplicationController
   end
 
   def create
-  current_user.development_plans << DevelopmentPlan.new(devplan_params)
-    if current_user.save
+    @development_plan = DevelopmentPlan.new(devplan_params)
+    #if @development_plan.save
+    if current_user.development_plans << @development_plan
   	  redirect_to :Dashboard
   	else
       #Render sends object back to form as opposed to redirect, which issues a new request
