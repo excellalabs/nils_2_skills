@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
   end
 
   def index
-    @skill = Skill.new
+    @skills = Skill.all
   end
 
   def create
