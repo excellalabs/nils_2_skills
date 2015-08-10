@@ -10,7 +10,7 @@
   <tbody>
     <% @skills.each do |skill| %>
       <tr>
-        <td><%= skill.skill_name %></td>
+        <td><%= link_to("#{skill.skill_name}", skill_path(skill.id)) %></td>
         <td><%= skill.category %></td>
         <td><%= skill.description %></td>
         <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
