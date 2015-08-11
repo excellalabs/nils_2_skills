@@ -6,6 +6,12 @@ Versions:
 * Rails 4.1.6
 * PostgreSQL 9.3
 
+Additional Tools:
+* RVM to manage Ruby versions: https://rvm.io/
+* RSpec-rails for testing: https://github.com/rspec/rspec-rails
+* Rubocop for code analysis: https://github.com/bbatsov/rubocop
+* Devise for user authentication: https://github.com/plataformatec/devise
+
 Initial Setup:
   1. Download and install VirtualBox: https://www.virtualbox.org/
   2. Download and install Vagrant: https://www.vagrantup.com/
@@ -28,16 +34,11 @@ Additional useful vagrant commands:
 * If any changes are made to the boostrap.sh file (such as adding additional components to the installation process), execute 'vagrant provision'.
 * Use 'vagrant destroy' to shut down and delete the vagrant vm.
 
-For more information on vagrant: https://docs.vagrantup.com/v2/
-
-RVM is used to manage Ruby versions. For more information: https://rvm.io/
-
-Rubocop is installed for code analysis. For more information: https://github.com/bbatsov/rubocop
-
-Rspec-rails is installed for testing: https://github.com/rspec/rspec-rails
-
+NOTE FOR WINDOWS USERS: 
 Sometimes on windows machines Vagrant will not successfully ssh into the box, due to the boot being unsuccessfull. This issue could be due to Hyper-V being enabled. Steps to resolve:
   1. Go to control panel
   2. Click on programs and features
   3. Select "Turn Windows Features on or off"
   4. Expand Hyper-V and uncheck all options.
+
+For more information on vagrant: https://docs.vagrantup.com/v2/
