@@ -18,6 +18,7 @@ user_list = [
 	[ "Brian Palladino", "brian.palladino@excella.com" ],
 	[ "Allison Zentmayer", "allison.zentmayer@excella.com" ],
 	[ "Kevin Ellis", "kevin.ellis@excella.com" ],
+	[ "Frances Johnson", "frances.johnson@excella.com"],
 	[ "fake_user", "fake.user@fakeemail.com" ]
 ]
 
