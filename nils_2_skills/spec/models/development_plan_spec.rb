@@ -13,4 +13,5 @@ RSpec.describe DevelopmentPlan do
   it "should validate name length" do
     expect(DevelopmentPlan.new(:plan_name => ("a"*52))).to_not be_valid
   end
+
 end
