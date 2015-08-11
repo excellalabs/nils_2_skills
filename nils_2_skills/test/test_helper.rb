@@ -8,7 +8,9 @@ class ActiveSupport::TestCase
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
-  include Devise::TestHelpers
 
-  # Add more helper methods to be used by all tests here...
+  class ActionController::TestCase
+    include Devise::TestHelpers
+  end
+
 end
