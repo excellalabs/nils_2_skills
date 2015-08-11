@@ -1,4 +1,4 @@
 class DevelopmentTask < ActiveRecord::Base
-	#belongs_to 
+	has_one :development_skill
 	validates :task_name, presence: true, length: { maximum: 50 }
 end
