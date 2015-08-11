@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe DevelopmentPlan do
+describe DevelopmentPlan do
 
   it "should require name" do
     expect(DevelopmentPlan.new(:description => "Test")).to_not be_valid
