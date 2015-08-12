@@ -2,15 +2,15 @@ require "rails_helper"
 
 describe DevelopmentPlan do
 
-  it "should require name" do
+  it "requires name" do
     expect(DevelopmentPlan.new(:description => "Test")).to_not be_valid
   end
 
-  it "should require description" do
+  it "requires description" do
     expect(DevelopmentPlan.new(:plan_name => "Test")).to_not be_valid
   end
 
-  it "should validate name length" do
+  it "validates name length" do
     expect(DevelopmentPlan.new(:plan_name => ("a"*52))).to_not be_valid
   end
 
