@@ -1,10 +1,16 @@
-<h1>Show</h1>
+<h1><%=  @development_plan.plan_name %></h1>
+Description: <%= @development_plan.description %><br/><br/><br/>
+<%= link_to("Edit Plan", edit_development_plan_path(@development_plan.id)) %> |
+<%= link_to "Delete Plan?", @development_plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{@development_plan.plan_name}?"} %><br/>
 
-ID: <%= @development_plan.id %><br/>
-Plan Name: <%=  @development_plan.plan_name %><br/>
-Description: <%= @development_plan.description %><br/>
-<%= link_to("edit", edit_development_plan_path(@development_plan.id)) %> <br/>
-<%= link_to "delete?", @development_plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{@development_plan.plan_name}?"} %><br/><br/>
-
-<br/><br/>
 <%= link_to("Back to Dashboard", :Dashboard) %>
+
+<% if development_plan.development_tasks.any? %>
+	<% current_user.development_plan.development_tasks.each do |task| %>
+		Task Name: <%= link_to("#{task.task_name}", development_task_path(task.id)) %> <br/><br/>
+	<% end %>
+	<br/><%= link_to("Create a new development task", new_development_task_path) %>
+<% else %>
+	<%= current_user.username %> does not currently have any development tasks!
+	<%= link_to("Create a new development task", new_development_task_path) %>
+<% end %>
