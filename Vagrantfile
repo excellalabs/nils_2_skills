@@ -4,6 +4,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 3000, host: 8888
 
+  config.vm.network "forwarded_port", guest: 5432, host: 7001
+  
   config.vm.provision "shell", path: "./vagrantconfig/bootstrap.sh"
   
 end
