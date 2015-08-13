@@ -32,3 +32,9 @@ group :development, :test do
 end
 # Rubocop for code analysis: https://github.com/bbatsov/rubocop
 gem 'rubocop', require: false
+
+gem 'simplecov', :require => false, :group => :test
+
+gem 'factory_girl_rails', '~> 4.0'
+
+gem 'faker'
