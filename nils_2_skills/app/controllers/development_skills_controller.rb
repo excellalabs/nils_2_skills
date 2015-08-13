@@ -20,9 +20,10 @@ class DevelopmentSkillsController < ApplicationController
   def edit
   end
 
-  def create
+  def create(plan_id = {})
     @development_skill = DevelopmentSkill.new(development_skill_params)
-    @development_skill.save
+    #@development_skill.save
+    DevelopmentPlan.find_by(plan_id).development_skills << @development_skill
     respond_with(@development_skill)
   end
 
