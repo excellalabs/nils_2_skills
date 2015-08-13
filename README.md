@@ -24,11 +24,11 @@ Initial Setup:
   9. Download and install pgadmin: http://www.postgresql.org/
   10. Open it, File -> Add Server
   11. Fill in the Name, Host, Port, Username, and Password fields with the following info:
-    *Name: nils_2_skills_development
-    *Host: localhost
-    *Port: 7001
-    *Username: developer
-    *Password: developer
+    * Name: nils_2_skills_development
+    * Host: localhost
+    * Port: 7001
+    * Username: developer
+    * Password: developer
 
 To start WEBrick and run the Rails app, use the alias 'runserver' from the command line.
 
