@@ -58,3 +58,8 @@ Skill.create!(skill_name: "Django", category: python)
 js = SkillCategory.create!(category_name: "Javascript", description: "Javascript stack")
 Skill.create!(skill_name: "Javascript", category: js)
 Skill.create!(skill_name: "Node.js", category: js)
+
+# sample create development skill linked to user 
+# myuser = User.find_by(username: "Brian Palladino")
+# myskill = Skill.find_by(skill_name: "Ruby")
+# DevelopmentSkill.create!(skill: myskill, skill_name: myskill.skill_name, user: myuser)
