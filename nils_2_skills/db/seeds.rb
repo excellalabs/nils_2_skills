@@ -1,17 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Wipe the DB before seeding to eliminate errors for unique fields
 require 'date'
 
 # Destroy all previous seeds
+# Wipe the DB before seeding to eliminate errors for unique fields
 User.destroy_all
 DevelopmentPlan.destroy_all
+Skill.destroy_all
+SkillCategory.destroy_all
+SkillLevel.destroy_all
 
 user_list = [
 	[ "Jon La Marr", "jon.lamarr@excella.com" ],
@@ -34,3 +29,32 @@ user_list.each do |name, email|
 	end
 end
 
+# skill levels
+SkillLevel.create!(level: "Beginner", description: "Beginner with no experience" )
+SkillLevel.create!(level: "Junior", description: "Junior developer level" )
+SkillLevel.create!(level: "Mid", description: "Mid developer level" )
+SkillLevel.create!(level: "Senior", description: "Senior developer level" )
+
+# Ruby
+ruby = SkillCategory.create!(category_name: "Ruby", description: "Ruby stack")
+Skill.create!(skill_name: "Ruby", category: ruby)
+Skill.create!(skill_name: "Ruby on Rails", category: ruby)
+
+# .NET
+net = SkillCategory.create!(category_name: ".NET", description: ".NET & Microsoft stack")
+Skill.create!(skill_name: "C#", category: net)
+Skill.create!(skill_name: "ASP.NET", category: net)
+
+# Java
+java = SkillCategory.create!(category_name: "Java", description: "Java stack")
+Skill.create!(skill_name: "Java", category: java)
+
+# Python
+python = SkillCategory.create!(category_name: "Python", description: "Python stack")
+Skill.create!(skill_name: "Python", category: python)
+Skill.create!(skill_name: "Django", category: python)
+
+# Javascript
+js = SkillCategory.create!(category_name: "Javascript", description: "Javascript stack")
+Skill.create!(skill_name: "Javascript", category: js)
+Skill.create!(skill_name: "Node.js", category: js)
