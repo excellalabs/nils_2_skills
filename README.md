@@ -21,14 +21,16 @@ Initial Setup:
   6. Enter 'cd /vagrant/nils_2_skills'
   7. Run 'bundle install'
   8. Run 'bundle exec rake db:migrate'
-  9. Download and install pgadmin: http://www.postgresql.org/
+  9. Download and install pgadmin: 
+    * Windows: http://www.postgresql.org/ftp/pgadmin3/release/v1.20.0/win32/
+    * Mac:  http://www.postgresql.org/ftp/pgadmin3/release/v1.20.0/osx/
   10. Open it, File -> Add Server
   11. Fill in the Name, Host, Port, Username, and Password fields with the following info:
-    *Name: nils_2_skills_development
-    *Host: localhost
-    *Port: 7001
-    *Username: developer
-    *Password: developer
+    * Name: nils_2_skills_development
+    * Host: localhost
+    * Port: 7001
+    * Username: developer
+    * Password: developer
 
 To start WEBrick and run the Rails app, use the alias 'runserver' from the command line.
 
