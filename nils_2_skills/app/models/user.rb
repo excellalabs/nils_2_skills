@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :development_plans
+  has_many :development_skills
 end

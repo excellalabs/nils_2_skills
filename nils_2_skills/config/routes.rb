@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'Profile' => 'user#Profile'
 
+  get 'Dashboard' => 'user#Dashboard'
+
+  get 'MySkills' => 'user#MySkills'
+
   get 'Home' => 'static_pages#Home'
 
   get 'About' => 'static_pages#About'
@@ -11,20 +15,6 @@ Rails.application.routes.draw do
   get 'Help' => 'static_pages#Help'
 
   get 'Settings' => 'static_pages#Settings'
-
-  get 'Dashboard' => 'user#Dashboard'
-
-  get 'admin' => 'admin#index'
- 
-  get 'admin/skill_category' => 'admin#skill_category'
-
-  get 'admin/edit_skill_category' => 'admin#edit_skill_category'
-
-  post 'admin/create_skill_category' => 'admin#create_skill_category'
-
-  patch 'admin/update_skill_category' => 'admin#update_skill_category'
-
-  delete 'admin/destroy_skill_category' => 'admin#destroy_skill_category'
 
   resources :development_plans
   resources :development_skills

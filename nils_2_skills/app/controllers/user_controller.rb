@@ -6,4 +6,12 @@ class UserController < ApplicationController
 
   def Profile
   end
+
+  def MySkills
+  	@development_skills = current_user.development_skills 	
+  end
+
+  def AddSkill
+  	
+  end
 end
