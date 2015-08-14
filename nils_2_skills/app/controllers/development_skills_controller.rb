@@ -14,17 +14,17 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def new
-    @development_skill = DevelopmentSkill.new(params[:development_skill])
+    @development_skill = DevelopmentSkill.new()
     respond_with(@development_skill)
   end
 
   def edit
   end
 
-  def create(plan_id = {})
+  def create()
     @development_skill = DevelopmentSkill.new(development_skill_params)
-    #@development_skill.save
-    DevelopmentPlan.find_by(plan_id).development_skills << @development_skill
+    @development_skill.save
+    prev_plan = @development_skill.development_plan_id
     respond_with(@development_skill)
   end
 

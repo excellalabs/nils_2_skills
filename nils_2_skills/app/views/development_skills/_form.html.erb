@@ -35,6 +35,7 @@
     <%= f.label :current_skill_level %><br>
     <%= f.text_field :current_skill_level %>
   </div>
+  <%= f.hidden_field :development_plan_id, :value => params[:development_plan_id] %>
   <div class="actions">
     <%= f.submit %>
   </div>
