@@ -2,4 +2,7 @@
 
 <%= render 'form' %>
 
+<input id="plan_id" type="hidden" value="<%= params[:development_plan] %>" />
+  <div class="field" type="hidden" id="plan_id" value="<%= params[:development_plan] %>" />
+  </div>
 <%= link_to 'Back', development_skills_path %>

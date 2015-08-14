@@ -13,7 +13,7 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def new
-    @development_skill = DevelopmentSkill.new
+    @development_skill = DevelopmentSkill.new(params[:development_skill])
     respond_with(@development_skill)
   end
 
@@ -43,6 +43,6 @@ class DevelopmentSkillsController < ApplicationController
     end
 
     def development_skill_params
-      params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level)
+      params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level, :development_plan_id)
     end
 end
