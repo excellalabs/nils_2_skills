@@ -1,10 +1,36 @@
-<h1>Show</h1>
+<h1><%=  @development_plan.plan_name %></h1>
+Description: <%= @development_plan.description %><br/><br/><br/>
+<%= link_to("Edit Plan", edit_development_plan_path(@development_plan.id)) %> |
+<%= link_to "Delete Plan?", @development_plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{@development_plan.plan_name}?"} %><br/>
 
-ID: <%= @development_plan.id %><br/>
-Plan Name: <%=  @development_plan.plan_name %><br/>
-Description: <%= @development_plan.description %><br/>
-<%= link_to("edit", edit_development_plan_path(@development_plan.id)) %> <br/>
-<%= link_to "delete?", @development_plan, method: :delete, data: { confirm: "Are you sure you want to delete the plan #{@development_plan.plan_name}?"} %><br/><br/>
-
-<br/><br/>
 <%= link_to("Back to Dashboard", :Dashboard) %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Skill name</th>
+      <th>Desired skill level</th>
+      <th>Notes</th>
+      <th>Completed</th>
+      <th>Percent complete</th>
+      <th>Current skill level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @development_plan.development_skills.each do |development_skill| %>
+      <tr>
+        <td><%= development_skill.skill_name %></td>
+        <td><%= development_skill.desired_skill_level %></td>
+        <td><%= development_skill.notes %></td>
+        <td><%= development_skill.completed %></td>
+        <td><%= development_skill.percent_complete %></td>
+        <td><%= development_skill.current_skill_level %></td>
+        <td><%= link_to 'Show', development_skill %></td>
+        <td><%= link_to 'Edit', edit_development_skill_path(development_skill) %></td>
+        <td><%= link_to 'Destroy', development_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -74,5 +74,3 @@ skill_list << Skills.create!(skill_name: "Node.js").skill_categories << js
 skill_list.each	do |s|
   s.save
 end
-
-
