@@ -1,15 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Wipe the DB before seeding to eliminate errors for unique fields
 require 'date'
 
 # Destroy all previous seeds
+# Wipe the DB before seeding to eliminate errors for unique fields
 User.destroy_all
 DevelopmentPlan.destroy_all
 Skill.destroy_all
@@ -43,34 +35,26 @@ SkillLevel.create!(level: "Junior", description: "Junior developer level" )
 SkillLevel.create!(level: "Mid", description: "Mid developer level" )
 SkillLevel.create!(level: "Senior", description: "Senior developer level" )
 
-# skill array
-skill_list = Array.new
-
 # Ruby
 ruby = SkillCategory.create!(category_name: "Ruby", description: "Ruby stack")
-skill_list << Skill.new(skill_name: "Ruby").skill_categories << ruby
-skill_list << Skill.new(skill_name: "Ruby on Rails").skill_categories << ruby
+Skill.create!(skill_name: "Ruby", category: ruby)
+Skill.create!(skill_name: "Ruby on Rails", category: ruby)
 
 # .NET
 net = SkillCategory.create!(category_name: ".NET", description: ".NET & Microsoft stack")
-skill_list << Skill.new(skill_name: "C#").skill_categories << net
-skill_list << Skill.new(skill_name: "ASP.NET").skill_categories << net
+Skill.create!(skill_name: "C#", category: net)
+Skill.create!(skill_name: "ASP.NET", category: net)
 
 # Java
 java = SkillCategory.create!(category_name: "Java", description: "Java stack")
-skill_list << Skills.new(skill_name: "Java").skill_categories << java
+Skill.create!(skill_name: "Java", category: java)
 
 # Python
 python = SkillCategory.create!(category_name: "Python", description: "Python stack")
-skill_list << Skill.new(skill_name: "Python").skill_categories << python
-skill_list << Skill.new(skill_name: "Django").skill_categories << python
+Skill.create!(skill_name: "Python", category: python)
+Skill.create!(skill_name: "Django", category: python)
 
 # Javascript
 js = SkillCategory.create!(category_name: "Javascript", description: "Javascript stack")
-skill_list << Skills.create!(skill_name: "Javascript").skill_categories << js
-skill_list << Skills.create!(skill_name: "Node.js").skill_categories << js
-
-# save skills to db
-skill_list.each	do |s|
-  s.save
-end
+Skill.create!(skill_name: "Javascript", category: js)
+Skill.create!(skill_name: "Node.js", category: js)
