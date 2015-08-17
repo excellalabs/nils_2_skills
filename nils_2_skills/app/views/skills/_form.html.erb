@@ -11,15 +11,18 @@
       </ul>
     </div>
   <% end %>
-  <%= s.label :skill_name %>
-  <%= s.text_field :skill_name, class: 'form-control'%>
+  <%= s.label :skill_name %>:
+  <%= s.text_field :skill_name, class: 'form-control'%><br/>
 
-  <%= s.label :category %>
-  <%= s.text_field :category, class: 'form-control'%>
+  <%= s.label :category %>:
+  <%= collection_select(:skill, :category, SkillCategory.all, :id, :category_name) %>
+  <%= link_to "Create a new category", new_skill_category_path %><br/>
 
-  <%= s.label :description %>
+  <%= s.label :description %>:
   <%= s.text_area :description, class: 'form-control'%>
-  <div class="actions">
-    <%= s.submit "Create new skill" %>
+
+    <div class="actions">
+    <%= s.submit %>
   </div>
+
 <% end %>

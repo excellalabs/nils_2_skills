@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20150814201421) do
     t.string   "current_skill_level"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.integer  "development_plan_id"
+    t.integer  "user_id"
     t.integer  "skill_id"
   end
 
