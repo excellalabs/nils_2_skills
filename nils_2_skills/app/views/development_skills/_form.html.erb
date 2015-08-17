@@ -18,8 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :desired_skill_level %><br>    
-    <% options = options_from_collection_for_select(@skill_levels, 'id', 'level') %>
-    <%= f.select :desired_skill_level, options %>  
+    <%= collection_select(:development_skill, :desired_skill_level, SkillLevel.all, :id, :level) %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>
@@ -35,8 +34,7 @@
   </div>
   <div class="field">
     <%= f.label :current_skill_level %><br>
-    <% options = options_from_collection_for_select(@skill_levels, 'id', 'level') %>
-    <%= f.select :current_skill_level, options %>   
+    <%= collection_select(:development_skill, :current_skill_level, SkillLevel.all, :id, :level) %> 
   </div>
   <%= f.hidden_field :development_plan_id, :value => params[:development_plan_id] %>
   <div class="actions">

@@ -45,8 +45,6 @@ class DevelopmentSkillsController < ApplicationController
   private
     def set_development_skill
       @development_skill = DevelopmentSkill.find(params[:id])
-      @skills = Skill.all()
-      @skill_levels = SkillLevel.all()
     end
 
     def development_skill_params

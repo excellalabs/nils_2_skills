@@ -2,12 +2,12 @@
 
 <p>
   <strong>Skill name:</strong>
-  <%= @development_skill.skill_name %>
+  <%= Skill.find(@development_skill.skill_name).skill_name %>
 </p>
 
 <p>
   <strong>Desired skill level:</strong>
-  <%= @development_skill.desired_skill_level %>
+  <%= SkillLevel.find(@development_skill.desired_skill_level).level %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Current skill level:</strong>
-  <%= @development_skill.current_skill_level %>
+  <%= SkillLevel.find(@development_skill.current_skill_level).level %>
 </p>
 
 <%= link_to 'Edit', edit_development_skill_path(@development_skill) %> |
