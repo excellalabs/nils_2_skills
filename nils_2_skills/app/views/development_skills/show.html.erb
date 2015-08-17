@@ -30,6 +30,11 @@
   <%= SkillLevel.find(@development_skill.current_skill_level).level %>
 </p>
 
+<p>
+  <strong>Development plan:</strong>
+  <%= DevelopmentPlan.find(@development_skill.development_plan_id).plan_name %>
+</p>
+
 <%= link_to 'Edit', edit_development_skill_path(@development_skill) %> |
 <%= link_to 'Back to skills', development_skills_path %> |
 <%= link_to 'Back to development plan', development_plan_path(@development_skill.development_plan_id) %>

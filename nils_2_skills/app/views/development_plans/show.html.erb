@@ -17,7 +17,7 @@ Description: <%= @development_plan.description %><br/><br/><br/>
   <tbody>
     <% @development_plan.development_skills.each do |development_skill| %>
       <tr>
-        <td><%= link_to "#{development_skill.skill_name}", development_skill %></td>
+        <td><%= link_to Skill.find("#{development_skill.skill_name}").skill_name, development_skill %></td>
         <td><%= development_skill.percent_complete %></td>
         <td><%= development_skill.completed %></td>
       </tr>
