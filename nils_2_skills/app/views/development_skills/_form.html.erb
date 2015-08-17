@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :skill_name %><br>
-    <%= f.select :skill_name, @skills %>  
+    <% options = options_from_collection_for_select(@skills, 'id','skill_name') %>
+    <%= f.select :skill_name, options %>  
   </div>
   <div class="field">
     <%= f.label :desired_skill_level %><br>
