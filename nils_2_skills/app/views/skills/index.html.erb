@@ -1,13 +1,12 @@
 <h1>Listing skills</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Description</th>
+  </tr>
 
-  <tbody>
     <% @skills.each do |skill| %>
       <tr>
         <td><%= link_to("#{skill.skill_name}", skill_path(skill.id)) %></td>
@@ -17,7 +16,6 @@
         <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>

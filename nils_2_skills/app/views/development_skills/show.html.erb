@@ -31,4 +31,5 @@
 </p>
 
 <%= link_to 'Edit', edit_development_skill_path(@development_skill) %> |
-<%= link_to 'Back', development_skills_path %>
+<%= link_to 'Back to skills', development_skills_path %> |
+<%= link_to 'Back to development plan', development_plan_path(@development_skill.development_plan_id) %>
