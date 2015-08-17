@@ -24,8 +24,8 @@ class DevelopmentSkillsController < ApplicationController
 
   def create()
     @development_skill = DevelopmentSkill.new(development_skill_params)
+    @development_skill.user = current_user
     @development_skill.save
-    prev_plan = @development_skill.development_plan_id
     respond_with(@development_skill)
   end
 
