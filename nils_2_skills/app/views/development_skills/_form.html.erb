@@ -35,7 +35,8 @@
   </div>
   <div class="field">
     <%= f.label :current_skill_level %><br>
-    <%= f.text_field :current_skill_level %>
+    <% options = options_from_collection_for_select(@skill_levels, 'id', 'level') %>
+    <%= f.select :current_skill_level, options %>   
   </div>
   <%= f.hidden_field :development_plan_id, :value => params[:development_plan_id] %>
   <div class="actions">
