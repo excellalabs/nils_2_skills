@@ -15,6 +15,7 @@ class DevelopmentSkillsController < ApplicationController
 
   def new
     @development_skill = DevelopmentSkill.new()
+    @skills = Skill.all()
     respond_with(@development_skill)
   end
 
