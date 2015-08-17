@@ -21,6 +21,8 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def edit
+    @skills = Skill.all()
+    @skill_levels = SkillLevel.all()
   end
 
   def create()
