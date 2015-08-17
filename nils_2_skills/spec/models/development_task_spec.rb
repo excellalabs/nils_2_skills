@@ -1,6 +1,4 @@
-require "rails_helper"
-
-RSpec.describe DevelopmentTask do
+describe DevelopmentTask do
 
   it "requires task name" do
     expect(DevelopmentTask.new(:details => "Test")).to_not be_valid
