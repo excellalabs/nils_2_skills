@@ -17,8 +17,9 @@
     <%= f.select :skill_name, options %>  
   </div>
   <div class="field">
-    <%= f.label :desired_skill_level %><br>
-    <%= f.text_field :desired_skill_level %>
+    <%= f.label :desired_skill_level %><br>    
+    <% options = options_from_collection_for_select(@skill_levels, 'id', 'level') %>
+    <%= f.select :desired_skill_level, options %>  
   </div>
   <div class="field">
     <%= f.label :notes %><br>
