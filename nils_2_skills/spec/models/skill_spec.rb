@@ -1,5 +1,3 @@
-require "rails_helper"
-
 describe Skill do
 	
 	describe 'Field Tests' do

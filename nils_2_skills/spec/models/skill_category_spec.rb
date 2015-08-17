@@ -1,6 +1,4 @@
-require "rails_helper"
-
-RSpec.describe SkillCategory do 
+describe SkillCategory do 
   
   it "requires category_name" do
   	expect(SkillCategory.new(:category_name => nil)).to_not be_valid
