@@ -1,0 +1,10 @@
+Coding Standards:
+*	Minitest for controllers
+*	Scaffold wherever possible
+*	RSpec for other unit tests
+*	Test:
+	*	Validations
+	*	Associations between models
+	*	Business Logic
+	*	Helpers
+*	Follow Rubocop
