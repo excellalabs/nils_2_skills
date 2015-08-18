@@ -6,6 +6,9 @@ Versions:
 * Rails 4.1.6
 * PostgreSQL 9.3
 
+Coding Standards:
+* Please look in the documentation folder for more information on this topic.
+
 Additional Tools:
 * RVM to manage Ruby versions: https://rvm.io/
 * RSpec-rails for testing: https://github.com/rspec/rspec-rails
