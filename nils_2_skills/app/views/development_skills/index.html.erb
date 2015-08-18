@@ -1,4 +1,4 @@
-<h1>Listing development_skills</h1>
+<h1>Listing Development Skills</h1>
 
 <table>
   <thead>
@@ -9,6 +9,7 @@
       <th>Completed</th>
       <th>Percent complete</th>
       <th>Current skill level</th>
+      <th>Development plan</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,12 +17,13 @@
   <tbody>
     <% @development_skills.each do |development_skill| %>
       <tr>
-        <td><%= development_skill.skill_name %></td>
-        <td><%= development_skill.desired_skill_level %></td>
+        <td><%= Skill.find(development_skill.skill_name).skill_name %></td>
+        <td><%= SkillLevel.find(development_skill.desired_skill_level).level %></td>
         <td><%= development_skill.notes %></td>
         <td><%= development_skill.completed %></td>
         <td><%= development_skill.percent_complete %></td>
-        <td><%= development_skill.current_skill_level %></td>
+        <td><%= SkillLevel.find(development_skill.current_skill_level).level %></td>
+        <td><%= DevelopmentPlan.find(development_skill.development_plan_id).plan_name %></td>
         <td><%= link_to 'Show', development_skill %></td>
         <td><%= link_to 'Edit', edit_development_skill_path(development_skill) %></td>
         <td><%= link_to 'Destroy', development_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
