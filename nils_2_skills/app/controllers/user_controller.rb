@@ -8,7 +8,7 @@ class UserController < ApplicationController
   end
 
   def MySkills
-  	@development_skills = current_user.development_skills.all 	
+  	@my_skills = current_user.my_skills	
   end
   
 end
