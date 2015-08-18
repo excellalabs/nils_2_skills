@@ -13,11 +13,12 @@
 
   <div class="field">
     <%= f.label :skill_name %><br>
-    <%= f.text_field :skill_name %>
+    <% options = options_from_collection_for_select(@skills, 'id','skill_name') %>
+    <%= f.select :skill_name, options %>  
   </div>
   <div class="field">
-    <%= f.label :desired_skill_level %><br>
-    <%= f.text_field :desired_skill_level %>
+    <%= f.label :desired_skill_level %><br>    
+    <%= collection_select(:development_skill, :desired_skill_level, SkillLevel.all, :id, :level) %>
   </div>
   <div class="field">
     <%= f.label :notes %><br>
@@ -33,8 +34,9 @@
   </div>
   <div class="field">
     <%= f.label :current_skill_level %><br>
-    <%= f.text_field :current_skill_level %>
+    <%= collection_select(:development_skill, :current_skill_level, SkillLevel.all, :id, :level) %> 
   </div>
+  <%= f.hidden_field :development_plan_id, :value => params[:development_plan_id] %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,4 +1,5 @@
 class DevelopmentSkillsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_development_skill, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -13,15 +14,20 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def new
-    @development_skill = DevelopmentSkill.new
+    @development_skill = DevelopmentSkill.new()
+    @skills = Skill.all()
+    @skill_levels = SkillLevel.all()
     respond_with(@development_skill)
   end
 
   def edit
+    @skills = Skill.all()
+    @skill_levels = SkillLevel.all()
   end
 
-  def create
+  def create()
     @development_skill = DevelopmentSkill.new(development_skill_params)
+    @development_skill.user = current_user
     @development_skill.save
     respond_with(@development_skill)
   end
@@ -42,6 +48,6 @@ class DevelopmentSkillsController < ApplicationController
     end
 
     def development_skill_params
-      params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level)
+      params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level, :development_plan_id)
     end
 end

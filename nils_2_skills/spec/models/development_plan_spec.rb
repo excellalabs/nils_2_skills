@@ -1,5 +1,3 @@
-require "rails_helper"
-
 describe DevelopmentPlan do
 
   it "requires name" do

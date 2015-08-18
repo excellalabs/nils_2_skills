@@ -1,5 +1,5 @@
 class DevelopmentTask < ActiveRecord::Base
-	has_one :development_skill
+	belongs_to :development_skill
 	validates :task_name, presence: true, length: { maximum: 50 }
 	#validates :start_date, date: { :before_or_equal_to => :completion_date }
 	validate :completion_date_is_after_start_date

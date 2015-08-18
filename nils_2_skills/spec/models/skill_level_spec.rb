@@ -1,6 +1,4 @@
-require "rails_helper"
-
-RSpec.describe SkillLevel do 
+describe SkillLevel do 
   
   it "requires level" do
   	expect(SkillLevel.new(:level => nil)).to_not be_valid

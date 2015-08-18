@@ -1,4 +1,5 @@
 class SkillsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -15,7 +16,7 @@ class SkillsController < ApplicationController
   def create
   	@skill = Skill.new(skill_params)
 	  	if @skill.save
-	  	  redirect_to :Dashboard
+	  	  redirect_to skills_path
 	  	else
 	      redirect_to skill_new_path
 	  end
@@ -23,14 +24,15 @@ class SkillsController < ApplicationController
 
   def destroy
   	@skill.destroy
-  	redirect_to 'Dashboard'
+  	redirect_to skills_path
   end
 
   def edit
   end
 
   def update
-    
+    @skill.update(skill_params)
+    redirect_to skills_path
   end
 
   def set_skill

@@ -1,8 +1,7 @@
 <h1>Show</h1>
 
-ID: <%= @skill.id %><br/>
 Skill Name: <%=  @skill.skill_name %><br/>
-Category: <%= @skill.category %><br/>
+Category: <%= SkillCategory.find(@skill.category).category_name %><br/>
 Description: <%= @skill.description %><br/>
 <%= link_to("edit", edit_skill_path(@skill.id)) %> <br/>
 <%= link_to "delete?", @skill, method: :delete, data: { confirm: "Are you sure you want to delete the task #{@skill.skill_name}?"} %><br/><br/>
