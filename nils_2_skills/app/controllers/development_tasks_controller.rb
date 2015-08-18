@@ -44,6 +44,6 @@ class DevelopmentTasksController < ApplicationController
     end
 
     def dev_task_params
-      params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed)
+      params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed, :development_skill_id)
     end
 end
