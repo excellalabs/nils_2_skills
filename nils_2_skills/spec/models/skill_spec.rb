@@ -1,36 +1,27 @@
-describe Skill do
-	
-	describe 'Field Tests' do
-		it 'saves the skills name' do
-			s = Skill.new
-			s.skill_name = "Test Skill"
-			expect(s.skill_name).to eq('Test Skill')
+RSpec.describe Skill do
+
+	describe "Model Associations" do
+		it "should have many development skills" do
+			should have_many(:development_skills)
 		end
 
-		it 'saves the description' do
-			s = Skill.new
-			s.description = "Test Description"
-			expect(s.description).to eq('Test Description')
-		end
-
-		it 'saves the category' do
-			s = Skill.new
-			s.category = "Test Category"
-			expect(s.category).to eq('Test Category')
+		it "should have and belong to many skill categories" do 
+			should have_and_belong_to_many(:skill_categories)
 		end
 	end
 
-	describe 'db validation' do
-		it 'must have a name and a category' do
-			s = Skill.new
-			s.category = "Test Category"
-			s.skill_name = "Test Skill_Name"
-			expect(s).to be_valid
+	describe "Database Validation" do
+		it "should validate presence of skill_name" do
+			validate_presence_of(:skill_name)
 		end
 
-		it 'is not valid with only one of them' do
-			s = Skill.new
-			expect(s).to_not be_valid
+		it "should validate presence of category" do
+			validate_presence_of(:category)
+		end
+
+		it "should save with valid skill_name and category" do
+			skill = Skill.new(:skill_name => "TestName", :category => "TestCategory")
+			expect(skill.save).to be true
 		end
 	end
 end

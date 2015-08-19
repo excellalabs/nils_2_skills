@@ -20,3 +20,6 @@ Gemfile.lock
 
 #Ignore RubyMine files`
 *.idea
+
+# Ignore Coverage Results
+/coverage
