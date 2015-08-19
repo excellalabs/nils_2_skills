@@ -1,16 +1,14 @@
 <h1>My Skills</h1>
-
+<br/>
 <table>
 	<tr>
 		<td>Skill</td>
-		<td>Current Level</td>
-		<td>Desired Level</td>
 	</tr>
-	<% @development_skills.each do |skill| %>
+	<% @my_skills.each do |skill| %>
 	    <tr>
 	      <td><%= skill.skill_name %></td>
-	      <td><%= skill.current_skill_level %></td>
-	      <td><%= skill.desired_skill_level %></td>
 	    </tr>
 	<% end %>
 </table>
+<br/>
+<%= link_to 'New Development skill', new_development_skill_path %>

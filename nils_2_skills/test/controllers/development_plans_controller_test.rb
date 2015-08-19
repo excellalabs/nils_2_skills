@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class DevelopmentPlansControllerTest < ActionController::TestCase
-
   # test "should get new" do
   #   get :new
   #   assert_response :success
@@ -20,5 +19,4 @@ class DevelopmentPlansControllerTest < ActionController::TestCase
   #   assert_response :success
   #   assert_not_nil assigns(:development_plan)
   # end
-
 end
