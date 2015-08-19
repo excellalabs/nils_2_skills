@@ -1,8 +1,8 @@
     <%= form_for @development_plan do |f| %>
 
 	  <% if @development_plan.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@development_plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+	    <div id='error_explanation'>
+	      <h2><%= pluralize(@development_plan.errors.count, 'error') %> prohibited this plan from being saved:</h2>
 
 	      <ul>
 	      <% @development_plan.errors.full_messages.each do |message| %>
@@ -18,7 +18,7 @@
       <%= f.label :description %>:
       <%= f.text_area :description, class: 'form-control' %>
 
-	  <div class="actions">
+	  <div class='actions'>
 	    <%= f.submit %>
 	  </div>
 
