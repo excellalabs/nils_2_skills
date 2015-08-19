@@ -1,7 +1,7 @@
 class DevelopmentTasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_development_task, only: [:show, :edit, :update, :destroy]
-
+  @@id = -1
   def index
     @development_tasks = DevelopmentTask.all
   end
@@ -11,13 +11,16 @@ class DevelopmentTasksController < ApplicationController
 
   def new
     @development_task = DevelopmentTask.new
+    @@id = params[:development_skill_id]
   end
 
   def edit
   end
 
   def create
-    @development_task = DevelopmentTask.new(dev_task_params)
+    p = dev_task_params
+    p[:development_skill_id] = @@id
+    @development_task = DevelopmentTask.new(p)
     if @development_task.save
       redirect_to development_tasks_path
     else
@@ -44,6 +47,6 @@ class DevelopmentTasksController < ApplicationController
     end
 
     def dev_task_params
-      params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed, :development_skill_id)
+      params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed)
     end
 end
