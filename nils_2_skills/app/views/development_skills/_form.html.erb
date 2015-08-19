@@ -38,7 +38,7 @@
   </div>
   <div class="field">
     <%= f.label :development_plan_id %><br>
-    <%= collection_select(:development_skill, :development_plan_id, current_user.development_plans, :id, :plan_name) %> 
+    <%= collection_select(:development_skill, :development_plan_id, current_user.development_plans, :id, :plan_name, :selected => params[:development_plan_id]) %> 
   </div>
   <div class="actions">
     <%= f.submit %>
