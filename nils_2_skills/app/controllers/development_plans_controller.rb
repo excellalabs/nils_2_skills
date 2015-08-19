@@ -54,17 +54,16 @@ class DevelopmentPlansController < ApplicationController
     end
   end
 
+  def correct_user(user_id)
+  #Checks if the plan was created by the current user before updating changes
+    user_id == current_user.id
+  end
+
+  def set_dev_plan
+    @development_plan = DevelopmentPlan.find(params[:id])
+  end
   private
-    def devplan_params
-    	params.require(:development_plan).permit(:plan_name, :description)
-    end
-
-    def correct_user(user_id)
-        #Checks if the plan was created by the current user before updating changes
-        user_id == current_user.id
-    end
-
-    def set_dev_plan
-      @development_plan = DevelopmentPlan.find(params[:id])
-    end
+  def devplan_params
+    params.require(:development_plan).permit(:plan_name, :description)
+  end
 end
