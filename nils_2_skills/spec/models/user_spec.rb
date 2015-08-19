@@ -28,7 +28,7 @@ describe User do
 	end
 
 	describe 'Associations' do
-	  it 'associates a development plan with a user' do
+	  	it 'associates a development plan with a user' do
 		user = User.create!(username: 'Allison', email: 'allison.zentmayer@excella.com', password: 'password',
 		confirmed_at: Date.today)
 		plan = DevelopmentPlan.new( :plan_name => 'Plan1', :description => 'Desc')
@@ -38,7 +38,7 @@ describe User do
 	end
 
 	describe 'Methods' do
-    it 'returns a list of completed development skills for the user' do
+    	it 'returns a list of completed development skills for the user' do
 	    user = User.create!(username: 'Test', email: 'test@excella.com', password: 'password', 
 		      	confirmed_at: Date.today)
 		  category = SkillCategory.create(category_name: 'Test Category')
