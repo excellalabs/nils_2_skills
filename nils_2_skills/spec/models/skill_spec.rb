@@ -3,13 +3,13 @@ RSpec.describe Skill do
     it 'should have many development skills' do
       should have_many(:development_skills)
     end
-
+  end
   describe 'Model Associations' do
     it 'should have many development skills' do
       should have_many(:development_skills)
     end
 
-    it 'should have and belong to many skill categories' do 
+    it 'should have and belong to many skill categories' do
       should have_and_belong_to_many(:skill_categories)
     end
   end
@@ -24,9 +24,8 @@ RSpec.describe Skill do
     end
 
     it 'should save with valid skill_name and category' do
-      skill = Skill.new(:skill_name => 'TestName', :category => 'TestCategory')
+      skill = Skill.new(skill_name: 'TestName', category: 'TestCategory')
       expect(skill.save).to be true
     end
   end
 end
-
