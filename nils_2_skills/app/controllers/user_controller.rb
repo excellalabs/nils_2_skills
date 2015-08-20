@@ -1,13 +1,13 @@
 class UserController < ApplicationController
   before_action :authenticate_user!
 
-  def Dashboard
+  def dashboard
   end
 
-  def Profile
+  def profile
   end
 
-  def MySkills
+  def my_skills
     @my_skills = current_user.my_skills
   end
 end
