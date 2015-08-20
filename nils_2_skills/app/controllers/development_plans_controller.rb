@@ -23,7 +23,7 @@ class DevelopmentPlansController < ApplicationController
   	  redirect_to :Dashboard
   	else
       #Render sends object back to form as opposed to redirect, which issues a new request
-      redirect_to new_development_plan_path
+      render 'new'
       # Flash error message - Hartl?
   	end
   end

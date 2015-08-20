@@ -239,7 +239,7 @@ Style/HashSyntax:
     - hash_rockets
 
 Style/IfUnlessModifier:
-  MaxLineLength: 80
+  MaxLineLength: 1000
 
 # Checks the indentation of the first key in a hash literal.
 Style/IndentHash:

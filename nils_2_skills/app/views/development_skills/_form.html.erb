@@ -1,7 +1,7 @@
 <%= form_for(@development_skill) do |f| %>
   <% if @development_skill.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@development_skill.errors.count, "error") %> prohibited this development_skill from being saved:</h2>
+    <div id='error_explanation'>
+      <h2><%= pluralize(@development_skill.errors.count, 'error') %> prohibited this development_skill from being saved:</h2>
 
       <ul>
       <% @development_skill.errors.full_messages.each do |message| %>
@@ -11,36 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class='field'>
     <%= f.label :skill_name %><br>
     <% options = options_from_collection_for_select(@skills, 'id','skill_name') %>
     <%= f.select :skill_name, options %>  
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :desired_skill_level %><br>    
     <%= collection_select(:development_skill, :desired_skill_level, SkillLevel.all, :id, :level) %>
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :completed %><br>
     <%= f.check_box :completed %>
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :percent_complete %><br>
     <%= f.text_field :percent_complete %>
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :current_skill_level %><br>
-    <%= collection_select(:development_skill, :current_skill_level, SkillLevel.all, :id, :level) %> 
+    <%= collection_select(:development_skill, :current_skill_level, SkillLevel.all, :id, :level) %>
   </div>
-  <div class="field">
+  <div class='field'>
     <%= f.label :development_plan_id %><br>
-    <%= collection_select(:development_skill, :development_plan_id, current_user.development_plans, :id, :plan_name) %> 
+    <%= collection_select(:development_skill, :development_plan_id, current_user.development_plans, :id, :plan_name, :selected => params[:development_plan_id]) %> 
   </div>
-  <div class="actions">
+  <div class='actions'>
     <%= f.submit %>
   </div>
 <% end %>
