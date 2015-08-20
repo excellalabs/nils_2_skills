@@ -15,7 +15,8 @@ RSpec.describe SkillCategory do
     end
 
     it 'should save with valid category_name' do
-      skill_category = SkillCategory.new(category_name: 'TestCategoryName')
+      skill_category = SkillCategory.new(category_name: 'TestCategoryName',
+                                         description: 'TestDescription')
       expect(skill_category.save).to be true
     end
   end
