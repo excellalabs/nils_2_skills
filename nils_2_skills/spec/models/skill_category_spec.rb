@@ -1,14 +1,23 @@
-describe SkillCategory do
-  it 'requires category_name' do
-    expect(SkillCategory.new(category_name: nil)).to_not be_valid
+RSpec.describe SkillCategory do
+  describe 'Model Associations' do
+    it 'should have and belong to many skills' do
+      should have_and_belong_to_many(:skills)
+    end
   end
 
-  it 'does not require description' do
-    expect(SkillCategory.new(category_name: 'Test', description: nil)).to be_valid
-  end
+  describe 'Database Validation' do
+    it 'should validate presence of category_name' do
+      validate_presence_of(:category_name)
+    end
 
-  it 'requires unique category_name' do
-    SkillCategory.create(category_name: 'Test', description: 'Test')
-    expect(SkillCategory.new(category_name: 'Test', description: 'Test')).to_not be_valid
+    it 'should validate uniqueness of category_name' do
+      validate_uniqueness_of(:category_name)
+    end
+
+    it 'should save with valid category_name' do
+      skill_category = SkillCategory.new(category_name: 'TestCategoryName',
+                                         description: 'TestDescription')
+      expect(skill_category.save).to be true
+    end
   end
 end
