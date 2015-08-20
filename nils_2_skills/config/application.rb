@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# rubocop:disable ClassAndModuleChildren
 module Nils2Skills
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -21,3 +22,4 @@ module Nils2Skills
     # config.i18n.default_locale = :de
   end
 end
+# rubocop:enable ClassAndModuleChildren

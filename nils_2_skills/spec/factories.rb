@@ -4,7 +4,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password 'password'
     password_confirmation 'password'
-    confirmed_at Time.Zone.today
+    confirmed_at Time.zone.now
   end
 
   factory :user do
