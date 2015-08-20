@@ -523,7 +523,7 @@ Rails/Validation:
     - app/models/**/*.rb
 
 LineLength:
-  Max: 150
+  Max: 999
 
 Documentation:
   Enabled: false

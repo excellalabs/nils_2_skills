@@ -58,14 +58,15 @@ class SkillCategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_skill_category
-      @skill_category = SkillCategory.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def skill_category_params
-      #params[:skill_category]
-      params.require(:skill_category).permit(:category_name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_skill_category
+    @skill_category = SkillCategory.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def skill_category_params
+    # params[:skill_category]
+    params.require(:skill_category).permit(:category_name, :description)
+  end
 end

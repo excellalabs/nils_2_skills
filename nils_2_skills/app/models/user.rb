@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :development_skills
 
   def my_skills
-    self.development_skills.where(completed: true).all.uniq
+    development_skills.where(completed: true).all.uniq
   end
-
 end

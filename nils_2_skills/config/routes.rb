@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   get 'Profile' => 'user#Profile'
@@ -23,7 +22,7 @@ Rails.application.routes.draw do
   resources :development_tasks
   resources :skill_categories
   resources :skill_levels
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -42,11 +42,12 @@ class DevelopmentTasksController < ApplicationController
   end
 
   private
-    def set_development_task
-      @development_task = DevelopmentTask.find(params[:id])
-    end
 
-    def dev_task_params
-      params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed)
-    end
+  def set_development_task
+    @development_task = DevelopmentTask.find(params[:id])
+  end
+
+  def dev_task_params
+    params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed)
+  end
 end

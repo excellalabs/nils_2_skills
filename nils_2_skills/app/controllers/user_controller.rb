@@ -8,7 +8,6 @@ class UserController < ApplicationController
   end
 
   def MySkills
-  	@my_skills = current_user.my_skills	
+    @my_skills = current_user.my_skills
   end
-  
 end
