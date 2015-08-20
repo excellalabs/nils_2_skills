@@ -17,6 +17,6 @@ RSpec.describe SkillLevel do
 
   it 'requires unique level' do
     SkillLevel.create(level: 'Test', description: 'Test')
-    expect(SkillLevel.new(level: 'Test', descriptionz: 'Test')).to_not be_valid
+    expect(SkillLevel.new(level: 'Test', description: 'Test')).to_not be_valid
   end
 end
