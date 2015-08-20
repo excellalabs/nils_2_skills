@@ -37,7 +37,7 @@ RSpec.describe User do
     it 'should save with valid email and password' do
       user = User.new(email: 'valid@email.com',
                       password: 'ValidPassword22',
-                      confirmed_at: Time.Zone.today) # Adding pre-confirmation for simplicity
+                      confirmed_at: Time.zone.now) # Adding pre-confirmation for simplicity
       expect(user.save).to be true
     end
   end

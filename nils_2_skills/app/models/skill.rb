@@ -3,5 +3,5 @@ class Skill < ActiveRecord::Base
   validates :category, presence: true
 
   has_many :development_skills
-  has_many :skill_categories, through: :skill_category_skills
+  has_many :skill_categories
 end

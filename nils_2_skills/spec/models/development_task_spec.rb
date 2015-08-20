@@ -25,6 +25,6 @@ RSpec.describe DevelopmentTask do
   end
 
   it 'validates start date is before end date' do
-    expect(DevelopmentTask.new(task_name: 'Test', start_date: Time.Zone.today, completion_date: '2015-01-01')).to_not be_valid
+    expect(DevelopmentTask.new(task_name: 'Test', start_date: Time.zone.now, completion_date: Time.zone.now + 1)).to_not be_valid
   end
 end
