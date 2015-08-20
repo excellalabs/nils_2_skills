@@ -42,6 +42,6 @@ RSpec.describe User do
 							:password => "ValidPassword22", 
 							:confirmed_at => Date.today) # Adding pre-confirmation for simplicity
 			expect(user.save).to be true
-		end
-	end
+	  end
+  end
 end
