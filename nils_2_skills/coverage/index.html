@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-08-19T20:33:20+00:00">2015-08-19T20:33:20+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-08-20T15:19:25+00:00">2015-08-20T15:19:25+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -5109,7 +5109,7 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">  	expect(SkillLevel.new(:level =&gt; nil)).to_not be_valid</code>
+          <code class="ruby">  	expect(SkillLevel.new(level: nil)).to_not be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -5133,7 +5133,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">  	expect(SkillLevel.new(:level =&gt; &#39;Test&#39;, :description =&gt; nil)).to be_valid</code>
+          <code class="ruby">  	expect(SkillLevel.new(level: &#39;Test&#39;, description: nil)).to be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -5157,13 +5157,13 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">    existing_category = SkillLevel.create(:level =&gt; &#39;Test&#39;, :description =&gt; &#39;Test&#39;)</code>
+          <code class="ruby">    existing_category = SkillLevel.create(level: &#39;Test&#39;, description: &#39;Test&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(SkillLevel.new(:level =&gt; &#39;Test&#39;, :description =&gt; &#39;Test&#39;)).to_not be_valid</code>
+          <code class="ruby">    expect(SkillLevel.new(level: &#39;Test&#39;, description: &#39;Test&#39;)).to_not be_valid</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -5217,25 +5217,25 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">	describe &quot;Model Associations&quot; do</code>
+          <code class="ruby">  describe &#39;Model Associations&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;should have many development skills&quot; do</code>
+          <code class="ruby">    it &#39;should have many development skills&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">			should have_many(:development_skills)</code>
+          <code class="ruby">      should have_many(:development_skills)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -5247,25 +5247,25 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;should have and belong to many skill categories&quot; do </code>
+          <code class="ruby">    it &#39;should have and belong to many skill categories&#39; do </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">			should have_and_belong_to_many(:skill_categories)</code>
+          <code class="ruby">      should have_and_belong_to_many(:skill_categories)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -5277,25 +5277,25 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">	describe &quot;Database Validation&quot; do</code>
+          <code class="ruby">  describe &#39;Database Validation&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;should validate presence of skill_name&quot; do</code>
+          <code class="ruby">    it &#39;should validate presence of skill_name&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">			validate_presence_of(:skill_name)</code>
+          <code class="ruby">      validate_presence_of(:skill_name)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -5307,19 +5307,19 @@
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;should validate presence of category&quot; do</code>
+          <code class="ruby">    it &#39;should validate presence of category&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">			validate_presence_of(:category)</code>
+          <code class="ruby">      validate_presence_of(:category)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -5331,31 +5331,31 @@
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">		it &quot;should save with valid skill_name and category&quot; do</code>
+          <code class="ruby">    it &#39;should save with valid skill_name and category&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">			skill = Skill.new(:skill_name =&gt; &quot;TestName&quot;, :category =&gt; &quot;TestCategory&quot;)</code>
+          <code class="ruby">      skill = Skill.new(:skill_name =&gt; &#39;TestName&#39;, :category =&gt; &#39;TestCategory&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">			expect(skill.save).to be true</code>
+          <code class="ruby">      expect(skill.save).to be true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -5649,13 +5649,13 @@
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby">		end</code>
+          <code class="ruby">	  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby">	end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
