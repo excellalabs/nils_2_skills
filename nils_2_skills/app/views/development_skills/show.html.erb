@@ -35,15 +35,11 @@
   <%= DevelopmentPlan.find(@development_skill.development_plan_id).plan_name %>
 </p>
 
+<%= link_to 'Edit', edit_development_skill_path(@development_skill, :development_plan_id => @development_skill.development_plan_id) %> |
+<%= link_to("New Development Task", new_development_task_path(:development_skill_id => @development_skill.id)) %><br/>
 <p>
   <strong>Development Tasks:</strong>
   <%= DevelopmentTask.all %>
 </p>
-
-
-<%= link_to 'Edit', edit_development_skill_path(@development_skill) %> |
-
-<%= link_to("New Development Task", new_development_task_path(:development_skill_id => @development_skill.id)) %>
-
 <%= link_to 'Back to skills', development_skills_path %> |
 <%= link_to 'Back to development plan', development_plan_path(@development_skill.development_plan_id) %>
