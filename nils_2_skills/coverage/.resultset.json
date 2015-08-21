@@ -606,10 +606,7 @@
         1,
         null,
         1,
-        1,
-        1,
-        null,
-        null,
+
         1,
         1,
         1,
@@ -704,10 +701,8 @@
         1,
         1,
         null,
-        null,
-        1,
-        1,
-        null,
+
+        2,
         null
       ],
       "/vagrant/nils_2_skills/spec/models/development_plan_skills_spec.rb": [
@@ -753,11 +748,7 @@
         1,
         null,
         null,
-        1,
-        1,
-        null,
-        null,
-        2,
+
         null
       ],
       "/vagrant/nils_2_skills/app/models/development_plan.rb": [
@@ -772,10 +763,7 @@
         1,
         null,
         1,
-        1,
-        1,
-        1,
-        null,
+
         1,
         1,
         null,
@@ -822,10 +810,7 @@
         1,
         1,
         null,
-        null,
-        1,
-        1,
-        null,
+
         null
       ],
       "/vagrant/nils_2_skills/app/models/development_task.rb": [
@@ -842,19 +827,7 @@
         1,
         2,
         null,
-        0,
-        null
-      ],
-      "/vagrant/nils_2_skills/spec/models/skill_category_skills_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/vagrant/nils_2_skills/app/models/skill_category_skills.rb": [
-        1,
-        1,
+
         1,
         null
       ],
@@ -863,6 +836,7 @@
         1,
         1,
         1,
+
         null,
         null,
         null,
@@ -1009,6 +983,7 @@
         null
       ]
     },
-    "timestamp": 1440095322
+
+    "timestamp": 1440101333
   }
 }

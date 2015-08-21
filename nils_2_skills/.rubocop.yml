@@ -507,7 +507,7 @@ Rails/DefaultScope:
     - app/models/**/*.rb
 
 Rails/HasAndBelongsToMany:
-  Include:
+  Exclude:
     - app/models/**/*.rb
 
 Rails/ReadWriteAttribute:
