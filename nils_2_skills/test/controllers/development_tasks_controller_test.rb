@@ -29,7 +29,6 @@ class DevelopmentTasksControllerTest < ActionController::TestCase
   end
 
   test 'should create development_task' do
-  	byebug
     assert_difference('DevelopmentTask.count') do
       post :create, development_task: { task_name: @development_task.task_name,
        									details: @development_task.details,
@@ -40,6 +39,26 @@ class DevelopmentTasksControllerTest < ActionController::TestCase
        								  }
     end
 
-    assert_redirected_to development_task_path(assigns(:development_task))
+    assert_redirected_to development_tasks_path
+  end
+
+  test 'should update development_task' do
+      patch :update, id: @development_task, development_task: { task_name: @development_task.task_name,
+						       								   	details: @development_task.details,
+						       									start_date: @development_task.start_date,
+						       									completion_date: @development_task.completion_date,
+						       									completed: @development_task.completed,
+						       									development_skill_id: @development_task.development_skill_id
+						       								  }
+
+    assert_redirected_to development_tasks_path
+  end
+
+  test 'should destroy development_task' do
+    assert_difference('DevelopmentTask.count', -1) do
+      delete :destroy, id: @development_task
+    end
+
+    assert_redirected_to development_tasks_path
   end
 end

@@ -23,7 +23,6 @@ class DevelopmentTasksController < ApplicationController
       p[:development_skill_id] = @id
     end
     @development_task = DevelopmentTask.new(p)
-    byebug
     if @development_task.save
       redirect_to development_tasks_path
     else
