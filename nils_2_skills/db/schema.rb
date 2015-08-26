@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20150820171211) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "development_plan_skills", force: true do |t|
+  create_table "development_plans_skills", force: true do |t|
+    t.belongs_to :development_plan, index: true
+    t.belongs_to :development_skill, index: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
