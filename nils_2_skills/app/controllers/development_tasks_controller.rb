@@ -19,7 +19,7 @@ class DevelopmentTasksController < ApplicationController
 
   def create
     p = dev_task_params
-    p[:development_skill_id] = @id
+    p[:development_skill_id] = @id if p[:development_skill_id].nil?
     @development_task = DevelopmentTask.new(p)
     if @development_task.save
       redirect_to development_tasks_path
@@ -48,6 +48,6 @@ class DevelopmentTasksController < ApplicationController
   end
 
   def dev_task_params
-    params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed)
+    params.require(:development_task).permit(:task_name, :details, :start_date, :completion_date, :completed, :development_skill_id)
   end
 end

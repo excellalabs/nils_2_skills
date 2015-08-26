@@ -1,17 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  skill_name: MyString
-  desired_skill_level: MyString
+  skill_name: 1
+  desired_skill_level: 1
   notes: MyText
   completed: false
   percent_complete: 1.5
-  current_skill_level: MyString
+  current_skill_level: 1
+  skill: one
+  development_plan_id: 1
 
 two:
-  skill_name: MyString
-  desired_skill_level: MyString
+  skill_name: 2
+  desired_skill_level: 2
   notes: MyText
   completed: false
   percent_complete: 1.5
-  current_skill_level: MyString
+  current_skill_level: 2
+  skill: two
+  development_plan_id: 2

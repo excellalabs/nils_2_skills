@@ -2,13 +2,14 @@ require 'test_helper'
 
 class DevelopmentSkillsControllerTest < ActionController::TestCase
   setup do
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
+    sign_in FactoryGirl.create(:admin) # Using factory girl as an example
     @development_skill = development_skills(:one)
   end
 
   test 'should get index' do
     get :index
     assert_response :success
-    assert_not_nil assigns(:development_skills)
   end
 
   test 'should get new' do
