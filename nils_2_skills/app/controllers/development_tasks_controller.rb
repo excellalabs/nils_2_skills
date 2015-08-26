@@ -19,9 +19,7 @@ class DevelopmentTasksController < ApplicationController
 
   def create
     p = dev_task_params
-    if p[:development_skill_id].nil?
-      p[:development_skill_id] = @id
-    end
+    p[:development_skill_id] = @id if p[:development_skill_id].nil?
     @development_task = DevelopmentTask.new(p)
     if @development_task.save
       redirect_to development_tasks_path

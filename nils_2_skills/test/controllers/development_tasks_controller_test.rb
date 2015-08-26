@@ -2,9 +2,9 @@ require 'test_helper'
 
 class DevelopmentTasksControllerTest < ActionController::TestCase
   def setup
-  	@request.env['devise.mapping'] = Devise.mappings[:admin]
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
     sign_in FactoryGirl.create(:admin) # Using factory girl as an example
-  	@development_task = development_tasks(:one)
+    @development_task = development_tasks(:one)
   end
 
   test 'should get index' do
@@ -30,26 +30,30 @@ class DevelopmentTasksControllerTest < ActionController::TestCase
 
   test 'should create development_task' do
     assert_difference('DevelopmentTask.count') do
-      post :create, development_task: { task_name: @development_task.task_name,
-       									details: @development_task.details,
-       									start_date: @development_task.start_date,
-       									completion_date: @development_task.completion_date,
-       									completed: @development_task.completed,
-       								  	development_skill_id: @development_task.development_skill_id
-       								  }
+      post :create, development_task:
+      {
+        task_name: @development_task.task_name,
+        details: @development_task.details,
+        start_date: @development_task.start_date,
+        completion_date: @development_task.completion_date,
+        completed: @development_task.completed,
+        development_skill_id: @development_task.development_skill_id
+      }
     end
 
     assert_redirected_to development_tasks_path
   end
 
   test 'should update development_task' do
-      patch :update, id: @development_task, development_task: { task_name: @development_task.task_name,
-						       								   	details: @development_task.details,
-						       									start_date: @development_task.start_date,
-						       									completion_date: @development_task.completion_date,
-						       									completed: @development_task.completed,
-						       									development_skill_id: @development_task.development_skill_id
-						       								  }
+    patch :update, id: @development_task, development_task:
+    {
+      task_name: @development_task.task_name,
+      details: @development_task.details,
+      start_date: @development_task.start_date,
+      completion_date: @development_task.completion_date,
+      completed: @development_task.completed,
+      development_skill_id: @development_task.development_skill_id
+    }
 
     assert_redirected_to development_tasks_path
   end
