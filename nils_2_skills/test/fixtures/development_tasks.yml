@@ -6,6 +6,7 @@ one:
   start_date: 2015-07-30
   completion_date: 2015-07-30
   completed: false
+  development_skill: one
 
 two:
   task_name: MyString
