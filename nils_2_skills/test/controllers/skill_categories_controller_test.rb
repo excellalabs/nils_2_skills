@@ -2,6 +2,8 @@ require 'test_helper'
 
 class SkillCategoriesControllerTest < ActionController::TestCase
   setup do
+    @request.env['devise.mapping'] = Devise.mappings[:admin]
+    sign_in FactoryGirl.create(:admin) # Using factory girl as an example
     @skill_category = skill_categories(:one)
   end
 
@@ -18,7 +20,11 @@ class SkillCategoriesControllerTest < ActionController::TestCase
 
   test 'should create skill_category' do
     assert_difference('SkillCategory.count') do
-      post :create, skill_category: {}
+      post :create, skill_category: 
+      {
+        category_name: Faker::Name.name,
+        description: Faker::Name.name
+      }
     end
 
     assert_redirected_to skill_category_path(assigns(:skill_category))
@@ -35,7 +41,11 @@ class SkillCategoriesControllerTest < ActionController::TestCase
   end
 
   test 'should update skill_category' do
-    patch :update, id: @skill_category, skill_category: {}
+    patch :update, id: @skill_category, skill_category: 
+    {
+      category_name: Faker::Name.name,
+      description: Faker::Name.name
+    }
     assert_redirected_to skill_category_path(assigns(:skill_category))
   end
 
