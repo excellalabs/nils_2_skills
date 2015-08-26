@@ -20,7 +20,7 @@ class SkillCategoriesControllerTest < ActionController::TestCase
 
   test 'should create skill_category' do
     assert_difference('SkillCategory.count') do
-      post :create, skill_category: 
+      post :create, skill_category:
       {
         category_name: Faker::Name.name,
         description: Faker::Name.name
@@ -41,7 +41,7 @@ class SkillCategoriesControllerTest < ActionController::TestCase
   end
 
   test 'should update skill_category' do
-    patch :update, id: @skill_category, skill_category: 
+    patch :update, id: @skill_category, skill_category:
     {
       category_name: Faker::Name.name,
       description: Faker::Name.name

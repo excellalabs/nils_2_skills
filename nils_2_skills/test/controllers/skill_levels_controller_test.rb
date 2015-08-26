@@ -20,7 +20,7 @@ class SkillLevelsControllerTest < ActionController::TestCase
 
   test 'should create skill_level' do
     assert_difference('SkillLevel.count') do
-      post :create, skill_level: 
+      post :create, skill_level:
       {
         level: Faker::Name.name,
         description: Faker::Name.name
@@ -41,7 +41,7 @@ class SkillLevelsControllerTest < ActionController::TestCase
   end
 
   test 'should update skill_level' do
-    patch :update, id: @skill_level, skill_level: 
+    patch :update, id: @skill_level, skill_level:
     {
       level: Faker::Name.name,
       description: Faker::Name.name

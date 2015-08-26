@@ -10,7 +10,6 @@ class DevelopmentSkillsControllerTest < ActionController::TestCase
   test 'should get index' do
     get :index
     assert_response :success
-    byebug
   end
 
   test 'should get new' do
