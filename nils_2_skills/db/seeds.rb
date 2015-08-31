@@ -36,9 +36,12 @@ SkillLevel.create!(level: "Mid", description: "Mid developer level" )
 SkillLevel.create!(level: "Senior", description: "Senior developer level" )
 
 # Ruby
-ruby = SkillCategory.create!(category_name: "Ruby", description: "Ruby stack")
-Skill.create!(skill_name: "Ruby", category: ruby)
-Skill.create!(skill_name: "Ruby on Rails", category: ruby)
+byebug
+byebug
+test = Skill.create!(skill_name: "Ruby")
+test.skill_categories = SkillCategory.create!(category_name: "Ruby", description: "Ruby stack")
+byebug
+Skill.create!(skill_name: "Ruby on Rails")
 
 # .NET
 net = SkillCategory.create!(category_name: ".NET", description: ".NET & Microsoft stack")

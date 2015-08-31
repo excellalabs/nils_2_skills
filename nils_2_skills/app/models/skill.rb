@@ -1,7 +1,7 @@
 class Skill < ActiveRecord::Base
-  validates :skill_name, presence: true
-  validates :category, presence: true
+  #validates :skill_id, presence: true
+  #validates :category, presence: true
 
   has_many :development_skills
-  has_many :skill_categories
+  has_and_belongs_to_many :skill_categories
 end

@@ -2,7 +2,7 @@
 
 <p>
   <strong>Skill name:</strong>
-  <%= Skill.find(@development_skill.skill_name).skill_name %>
+  <%= @development_skill.skill%>
 </p>
 
 <p>
@@ -31,8 +31,8 @@
 </p>
 
 <p>
-  <strong>Development plan:</strong>
-  <%= DevelopmentPlan.find(@development_skill.development_plan_id).plan_name %>
+  <strong>Development plans:</strong>
+  <td><%= @development_skill.development_plans %></td>
 </p>
 
 <%= link_to 'Edit', edit_development_skill_path(@development_skill, :development_plan_id => @development_skill.development_plan_id) %> |

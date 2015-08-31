@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820171211) do
+ActiveRecord::Schema.define(version: 20150831203708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "development_plans_skills", force: true do |t|
-    t.belongs_to :development_plan, index: true
-    t.belongs_to :development_skill, index: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "development_plans", force: true do |t|
     t.string   "plan_name"
@@ -31,8 +24,18 @@ ActiveRecord::Schema.define(version: 20150820171211) do
     t.integer  "user_id"
   end
 
+  create_table "development_plans_skills", force: true do |t|
+    t.integer  "development_plan_id"
+    t.integer  "development_skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "development_plans_skills", ["development_plan_id"], name: "index_development_plans_skills_on_development_plan_id", using: :btree
+  add_index "development_plans_skills", ["development_skill_id"], name: "index_development_plans_skills_on_development_skill_id", using: :btree
+
   create_table "development_skills", force: true do |t|
-    t.string   "skill_name"
+    t.integer  "skill_id"
     t.string   "desired_skill_level"
     t.text     "notes"
     t.boolean  "completed"
@@ -42,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150820171211) do
     t.datetime "updated_at"
     t.integer  "development_plan_id"
     t.integer  "user_id"
-    t.integer  "skill_id"
   end
 
   add_index "development_skills", ["skill_id"], name: "index_development_skills_on_skill_id", using: :btree
@@ -68,16 +70,6 @@ ActiveRecord::Schema.define(version: 20150820171211) do
     t.datetime "updated_at"
   end
 
-  create_table "skill_categories_skills", force: true do |t|
-    t.integer  "skill_id"
-    t.integer  "skill_category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "skill_categories_skills", ["skill_category_id"], name: "index_skill_categories_skills_on_skill_category_id", using: :btree
-  add_index "skill_categories_skills", ["skill_id"], name: "index_skill_categories_skills_on_skill_id", using: :btree
-
   create_table "skill_category_skills", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -92,11 +84,23 @@ ActiveRecord::Schema.define(version: 20150820171211) do
 
   create_table "skills", force: true do |t|
     t.string   "skill_name"
-    t.string   "category"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "skill_category_id"
   end
+
+  add_index "skills", ["skill_category_id"], name: "index_skills_on_skill_category_id", using: :btree
+
+  create_table "skills_skill_categories", force: true do |t|
+    t.integer  "skill_id"
+    t.integer  "skill_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skills_skill_categories", ["skill_category_id"], name: "index_skills_skill_categories_on_skill_category_id", using: :btree
+  add_index "skills_skill_categories", ["skill_id"], name: "index_skills_skill_categories_on_skill_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
