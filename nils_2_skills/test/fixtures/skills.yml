@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+skill_one:
   id: 1
   skill_name: 1
-  category: MyString
+  category: 1
   description: MyText
 
-two:
+skill_two:
   id: 2
   skill_name: 2
-  category: MyString
+  category: 2
   description: MyText

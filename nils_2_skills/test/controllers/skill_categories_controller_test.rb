@@ -4,7 +4,7 @@ class SkillCategoriesControllerTest < ActionController::TestCase
   setup do
     @request.env['devise.mapping'] = Devise.mappings[:admin]
     sign_in FactoryGirl.create(:admin) # Using factory girl as an example
-    @skill_category = skill_categories(:one)
+    @skill_category = skill_categories(:category_one)
   end
 
   test 'should get index' do
