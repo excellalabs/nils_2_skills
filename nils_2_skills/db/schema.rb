@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820171211) do
+ActiveRecord::Schema.define(version: 20150902170915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "development_plans_skills", force: true do |t|
-    t.belongs_to :development_plan, index: true
-    t.belongs_to :development_skill, index: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "development_plans", force: true do |t|
     t.string   "plan_name"
@@ -31,13 +24,29 @@ ActiveRecord::Schema.define(version: 20150820171211) do
     t.integer  "user_id"
   end
 
+  create_table "development_plans_skills", force: true do |t|
+    t.integer  "development_plan_id"
+    t.integer  "development_skill_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "development_plans_skills", ["development_plan_id"], name: "index_development_plans_skills_on_development_plan_id", using: :btree
+  add_index "development_plans_skills", ["development_skill_id"], name: "index_development_plans_skills_on_development_skill_id", using: :btree
+
+  create_table "development_skill_levels", force: true do |t|
+    t.integer  "development_skill_id"
+    t.integer  "skill_level_id"
+    t.boolean  "is_current"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "development_skills", force: true do |t|
     t.string   "skill_name"
-    t.string   "desired_skill_level"
     t.text     "notes"
     t.boolean  "completed"
     t.float    "percent_complete"
-    t.string   "current_skill_level"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "development_plan_id"

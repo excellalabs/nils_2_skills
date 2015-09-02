@@ -28,6 +28,8 @@ class DevelopmentSkillsController < ApplicationController
   def create
     @development_skill = DevelopmentSkill.new(development_skill_params)
     @development_skill.user = current_user
+    @development_skill.development_skill_levels << current_skill
+    @development_skill.development_skill_levels << desired_skill
     @development_skill.save
     respond_with(@development_skill)
   end
@@ -49,6 +51,18 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def development_skill_params
-    params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level, :development_plan_id)
+    params.require(:development_skill).permit(:skill_id, :notes, :completed, :percent_complete, :development_plan_id)
+  end
+
+  def current_skill
+    create_development_skill_level 'current_skill_level', true
+  end
+
+  def desired_skill
+    create_development_skill_level 'desired_skill_level', false
+  end
+
+  def create_development_skill_level(field, is_current_skill)
+    DevelopmentSkillLevel.new(is_current: is_current_skill, skill_level_id: params['development_skill'][field])
   end
 end

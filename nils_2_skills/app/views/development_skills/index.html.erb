@@ -17,13 +17,13 @@
   <tbody>
     <% @development_skills.each do |development_skill| %>
       <tr>
-        <td><%= Skill.find(development_skill.skill_name).skill_name %></td>
-        <td><%= SkillLevel.find(development_skill.desired_skill_level).level %></td>
+        <td><%= development_skill.skill.skill_name unless development_skill.skill.nil? %></td>
+        <td><%= development_skill.development_skill_levels.find_by(is_current: false).skill_level.level unless development_skill.development_skill_levels.find_by(is_current: false).nil? %></td>
         <td><%= development_skill.notes %></td>
         <td><%= development_skill.completed %></td>
         <td><%= development_skill.percent_complete %></td>
-        <td><%= SkillLevel.find(development_skill.current_skill_level).level %></td>
-        <td><%= DevelopmentPlan.find(development_skill.development_plan_id).plan_name %></td>
+        <td><%= development_skill.development_skill_levels.find_by(is_current: true).skill_level.level unless development_skill.development_skill_levels.find_by(is_current: true).nil? %></td>
+        <td><%= development_skill.development_plan.plan_name %></td>
         <td><%= link_to 'Show', development_skill %></td>
         <td><%= link_to 'Edit', edit_development_skill_path(development_skill) %></td>
         <td><%= link_to 'Destroy', development_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>

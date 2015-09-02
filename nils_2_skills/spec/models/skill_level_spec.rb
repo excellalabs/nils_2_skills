@@ -6,6 +6,15 @@ RSpec.describe SkillLevel do
       validate_presence_of(:level)
     end
   end
+  describe 'Model Associations' do
+    it 'should have many development skill levels' do
+      should have_many(:development_skill_levels)
+    end
+
+    it 'should have many development skills through development skill levels' do
+      should have_many(:development_skills).through(:development_skill_levels)
+    end
+  end
 
   it 'requires level' do
     expect(SkillLevel.new(level: nil)).to_not be_valid

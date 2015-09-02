@@ -2,12 +2,12 @@
 
 <p>
   <strong>Skill name:</strong>
-  <%= Skill.find(@development_skill.skill_name).skill_name %>
+  <%= @development_skill.skill.skill_name unless @development_skill.skill.nil? %>
 </p>
 
 <p>
   <strong>Desired skill level:</strong>
-  <%= SkillLevel.find(@development_skill.desired_skill_level).level %>
+  <%= @development_skill.development_skill_levels.find_by(is_current: false).skill_level.level unless @development_skill.development_skill_levels.find_by(is_current: false).nil? %>
 </p>
 
 <p>
@@ -27,12 +27,12 @@
 
 <p>
   <strong>Current skill level:</strong>
-  <%= SkillLevel.find(@development_skill.current_skill_level).level %>
+  <%= @development_skill.development_skill_levels.find_by(is_current: true).skill_level.level unless @development_skill.development_skill_levels.find_by(is_current: true).nil? %>
 </p>
 
 <p>
   <strong>Development plan:</strong>
-  <%= DevelopmentPlan.find(@development_skill.development_plan_id).plan_name %>
+  <%= @development_skill.development_plan.plan_name %>
 </p>
 
 <%= link_to 'Edit', edit_development_skill_path(@development_skill, :development_plan_id => @development_skill.development_plan_id) %> |
