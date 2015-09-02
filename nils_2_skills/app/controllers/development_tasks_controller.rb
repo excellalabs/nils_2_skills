@@ -1,5 +1,4 @@
 class DevelopmentTasksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_development_task, only: [:show, :edit, :update, :destroy]
   @id = -1
   def index

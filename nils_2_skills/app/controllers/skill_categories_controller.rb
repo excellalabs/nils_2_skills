@@ -1,5 +1,4 @@
 class SkillCategoriesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_skill_category, only: [:show, :edit, :update, :destroy]
 
   # GET /skill_categories

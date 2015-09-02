@@ -1,5 +1,4 @@
 class SkillLevelsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_skill_level, only: [:show, :edit, :update, :destroy]
 
   # GET /skill_levels
