@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904203710) do
+ActiveRecord::Schema.define(version: 20150908190409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20150904203710) do
   end
 
   create_table "development_skills", force: true do |t|
-    t.string   "skill_name"
     t.text     "notes"
     t.boolean  "completed"
     t.float    "percent_complete"
