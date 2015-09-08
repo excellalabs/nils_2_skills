@@ -49,6 +49,6 @@ class DevelopmentSkillsController < ApplicationController
   end
 
   def development_skill_params
-    params.require(:development_skill).permit(:skill_name, :desired_skill_level, :notes, :completed, :percent_complete, :current_skill_level, :development_plan_id)
+    params.require(:development_skill).permit(:skill_name, :desired_skill_level_id, :notes, :completed, :percent_complete, :current_skill_level_id, :development_plan_id)
   end
 end

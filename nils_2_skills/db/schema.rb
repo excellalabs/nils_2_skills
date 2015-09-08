@@ -11,14 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820171211) do
+ActiveRecord::Schema.define(version: 20150904203710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "development_plans_skills", force: true do |t|
-    t.belongs_to :development_plan, index: true
-    t.belongs_to :development_skill, index: true
+  create_table "development_plan_skills", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,16 +31,16 @@ ActiveRecord::Schema.define(version: 20150820171211) do
 
   create_table "development_skills", force: true do |t|
     t.string   "skill_name"
-    t.string   "desired_skill_level"
     t.text     "notes"
     t.boolean  "completed"
     t.float    "percent_complete"
-    t.string   "current_skill_level"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "development_plan_id"
     t.integer  "user_id"
     t.integer  "skill_id"
+    t.integer  "desired_skill_level_id"
+    t.integer  "current_skill_level_id"
   end
 
   add_index "development_skills", ["skill_id"], name: "index_development_skills_on_skill_id", using: :btree
