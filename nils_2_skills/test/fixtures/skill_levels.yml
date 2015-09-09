@@ -2,10 +2,10 @@
 
 one:
   id: 1
-  level: 1
+  level: level_one
   description: MyText1
 
 two:
   id: 2
-  level: 2
+  level: level_two
   description: MyText2

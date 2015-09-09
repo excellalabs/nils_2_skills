@@ -2,12 +2,12 @@
 
 skill_one:
   id: 1
-  skill_name: 1
+  skill_name: skill_one_name
   category: 1
   description: MyText
 
 skill_two:
   id: 2
-  skill_name: 2
+  skill_name: skill_two_name
   category: 2
   description: MyText

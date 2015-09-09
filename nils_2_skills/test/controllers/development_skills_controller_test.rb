@@ -23,8 +23,7 @@ class DevelopmentSkillsControllerTest < ActionController::TestCase
                                           current_skill_level: @development_skill.current_skill_level,
                                           desired_skill_level: @development_skill.desired_skill_level,
                                           notes: @development_skill.notes,
-                                          percent_complete: @development_skill.percent_complete,
-                                          skill_name: @development_skill.skill_name
+                                          percent_complete: @development_skill.percent_complete
                                         }
     end
 
@@ -46,8 +45,7 @@ class DevelopmentSkillsControllerTest < ActionController::TestCase
                                                                 current_skill_level: @development_skill.current_skill_level,
                                                                 desired_skill_level: @development_skill.desired_skill_level,
                                                                 notes: @development_skill.notes,
-                                                                percent_complete: @development_skill.percent_complete,
-                                                                skill_name: @development_skill.skill_name
+                                                                percent_complete: @development_skill.percent_complete
           }
     assert_redirected_to development_skill_path(assigns(:development_skill))
   end

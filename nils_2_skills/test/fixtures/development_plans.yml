@@ -2,10 +2,12 @@
 
 one:
   id: 1
-  plan_name: MyString	
-  description: MyText
+  plan_name: PlanNameOne	
+  description: PlanOneDescription
+  user_id: 1
 
 two:
   id: 2
-  plan_name: MyString
-  description: MyText
+  plan_name: PlanNameTwo	
+  description: PlanTwoDescription
+  user_id: 2
