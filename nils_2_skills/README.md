@@ -1,0 +1,1 @@
+See the README document in the project's root folder for detailed information.
